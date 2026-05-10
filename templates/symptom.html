@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Symptom Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <a href="/human" class="back-btn">← Back</a>
+    
+<div class="dashboard-container">
+    <h1>Symptom Checker</h1>
+
+    <form>
+        <input type="text" placeholder="Enter symptoms (fever, cough etc)"><br><br>
+
+        <button type="submit">Check Symptoms</button>
+    </form>
+
+    <h3 style="margin-top:20px;color:green;">
+        Possible Condition: Common Cold / Fever
+    </h3>
+</div>
+
+</body>
+</html>

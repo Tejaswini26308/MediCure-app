@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - MediVerse AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Login to MediVerse AI</h1>
+
+    <form>
+        <input type="text" placeholder="Enter Email"><br><br>
+        <input type="password" placeholder="Enter Password"><br><br>
+
+        <select>
+            <option>Human Healthcare</option>
+            <option>Veterinary User</option>
+            <option>Hospital Admin</option>
+        </select><br><br>
+
+        <a href="/dashboard">
+    <button type="button">Login</button>
+</a>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="dashboard-container">
+    <h1>Welcome to MediVerse AI</h1>
+
+    <a href="/human">
+<div class="card">
+    <h2>Human Healthcare</h2>
+    <p>Symptom checker, reports, appointments</p>
+</div>
+</a>
+
+    <a href="/vet">
+<div class="card">
+    <h2>Veterinary Care</h2>
+    <p>Pet health support and vet booking</p>
+</div>
+</a>
+
+    <a href="/admin">
+<div class="card">
+    <h2>Hospital Admin</h2>
+    <p>Manage schedules and records</p>
+</div>
+</a>
+</div>
+
+</body>
+</html>

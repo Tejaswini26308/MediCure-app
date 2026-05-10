@@ -1,0 +1,165 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* soft background */
+body{
+    background: linear-gradient(135deg,#f3edb8,#ecfdf5);
+}
+
+/* navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background: linear-gradient(90deg,#594f92,#5b90a0);
+    color:rgb(208, 127, 127);
+    padding:20px 40px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+/* hero section */
+.hero{
+    text-align:center;
+    padding:100px 20px;
+    background: linear-gradient(135deg,#38b2a498,#04e0935b);
+    color:rgb(23, 43, 47);
+    animation: fadeIn 2s ease;
+}
+
+.hero h2{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+/* buttons */
+button{
+    background:rgb(187, 122, 122);
+    color:#080303;
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:#318951;
+    color:rgb(194, 107, 107);
+}
+
+/* services section */
+.services{
+    text-align:center;
+    padding:60px;
+}
+
+/* cards */
+.card-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:rgb(177, 103, 103);
+    width:300px;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0px 5px 20px rgba(13, 6, 6, 0.2);
+    transition:0.4s;
+    border-top:5px solid #e44d4d;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-top:5px solid #2398ca;
+}
+
+/* dashboard */
+.dashboard-container{
+    text-align:center;
+    padding:50px;
+}
+
+.dashboard-container h1{
+    margin-bottom:30px;
+    font-size:35px;
+    color:#682525;
+}
+
+.dashboard-container .card{
+    margin:20px auto;
+}
+
+/* remove link underline */
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* login page fix */
+.login-container{
+    text-align:center;
+    margin-top:100px;
+}
+
+/* form fields */
+input, select{
+    padding:12px;
+    width:280px;
+    border-radius:10px;
+    border:1px solid #c66969;
+}
+
+/* footer */
+footer{
+    text-align:center;
+    background: linear-gradient(90deg,#4d72c1,#46e4cf);
+    color:rgb(208, 119, 119);
+    padding:20px;
+    margin-top:40px;
+}
+
+/* animation */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+.back-btn{
+    position:absolute;
+    top:20px;
+    left:20px;
+    background:#0ae0b2;
+    color:rgb(18, 14, 14);
+    padding:10px 20px;
+    border-radius:20px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.back-btn:hover{
+    background:#242b15;
+}

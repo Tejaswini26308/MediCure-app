@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Health Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <a href="/human" class="back-btn">← Back</a>
+
+<div class="dashboard-container">
+    <h1>AI Health Assistant</h1>
+
+    <form>
+        <input type="text" placeholder="Ask your health question"><br><br>
+
+        <button type="submit">Ask AI</button>
+    </form>
+
+    <h3 style="margin-top:20px;color:green;">
+        AI Suggestion: Drink water, take rest, and consult a doctor if symptoms continue.
+    </h3>
+</div>
+
+</body>
+</html>

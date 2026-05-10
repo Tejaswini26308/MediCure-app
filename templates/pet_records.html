@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet Records Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<a href="/vet" class="back-btn">← Back</a>
+
+<div class="dashboard-container">
+    <h1>Upload Pet Medical Record</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <input type="file" name="pet_file" required><br><br>
+
+        <button type="submit">Upload Record</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Veterinary Care</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <a href="/dashboard" class="back-btn">← Back</a>
+
+<div class="dashboard-container">
+    <h1>Veterinary Care Services</h1>
+
+    <a href="/pet_symptom">
+<div class="card">
+    <h2>Pet Symptom Checker</h2>
+    <p>Check pet health issues</p>
+</div>
+</a>
+
+    <a href="/vet_appointment">
+<div class="card">
+    <h2>Vet Appointment Booking</h2>
+    <p>Book appointments for pets</p>
+</div>
+</a>
+
+   <a href="/vaccination">
+<div class="card">
+    <h2>Vaccination Reminder</h2>
+    <p>Track pet vaccinations</p>
+</div>
+</a>
+
+   <a href="/pet_records">
+<div class="card">
+    <h2>Pet Medical Records</h2>
+    <p>Store pet reports and history</p>
+</div>
+</a>
+
+</div>
+
+</body>
+</html>

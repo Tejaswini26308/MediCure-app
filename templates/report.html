@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Report Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <a href="/human" class="back-btn">← Back</a>
+
+<div class="dashboard-container">
+    <h1>Upload Medical Report</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <input type="file" name="report_file" required><br><br>
+
+        <button type="submit">Upload Report</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Human Healthcare</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <a href="/dashboard" class="back-btn">← Back</a>
+
+<div class="dashboard-container">
+    <h1>Human Healthcare Services</h1>
+
+    <a href="/symptom">
+<div class="card">
+    <h2>Symptom Checker</h2>
+    <p>Check possible diseases based on symptoms</p>
+</div>
+</a>
+
+    <a href="/appointment">
+<div class="card">
+    <h2>Appointment Booking</h2>
+    <p>Book doctor appointments easily</p>
+</div>
+</a>
+
+    <a href="/report">
+<div class="card">
+    <h2>Medical Report Upload</h2>
+    <p>Upload reports for AI summary</p>
+</div>
+</a>
+
+    <a href="/chatbot">
+<div class="card">
+    <h2>AI Chatbot</h2>
+    <p>Ask healthcare questions</p>
+</div>
+</a>
+
+    <a href="/remedies">
+<div class="card">
+    <h2>Home Remedies</h2>
+    <p>Get basic remedy suggestions</p>
+</div>
+</a>
+
+</div>
+
+</body>
+</html>
