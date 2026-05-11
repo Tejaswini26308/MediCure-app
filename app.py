@@ -98,7 +98,30 @@ def admin():
     cursor.execute("SELECT * FROM appointments")
     appointments = cursor.fetchall()
 
-    return render_template('admin.html', appointments=appointments)
+    cursor.execute("SELECT COUNT(*) FROM appointments")
+    total_appointments = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM vet_appointments")
+    total_vet = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM reports")
+    total_reports = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM pet_records")
+    total_pet_records = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM vaccinations")
+    total_vaccinations = cursor.fetchone()[0]
+
+    return render_template(
+        'admin.html',
+        appointments=appointments,
+        total_appointments=total_appointments,
+        total_vet=total_vet,
+        total_reports=total_reports,
+        total_pet_records=total_pet_records,
+        total_vaccinations=total_vaccinations
+    )
 
 @app.route('/appointment', methods=['GET', 'POST'])
 def appointment():

@@ -9,9 +9,42 @@
     <a href="/dashboard" class="back-btn">← Back</a>
 
 <div class="dashboard-container">
-    <h1>Hospital Admin Dashboard</h1>
 
-    <h2>Booked Appointments</h2>
+    <h1>Admin Analytics Dashboard</h1>
+
+    <!-- Analytics Cards -->
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Total Human Appointments</h3>
+            <p>{{ total_appointments }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Vet Appointments</h3>
+            <p>{{ total_vet }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Reports</h3>
+            <p>{{ total_reports }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Pet Records</h3>
+            <p>{{ total_pet_records }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Vaccinations</h3>
+            <p>{{ total_vaccinations }}</p>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <h2>Booked Human Appointments</h2>
 
     <table border="1" align="center" cellpadding="10">
         <tr>
@@ -31,7 +64,6 @@
             <td>{{ appointment[4] }}</td>
         </tr>
         {% endfor %}
-
     </table>
 
 </div>
