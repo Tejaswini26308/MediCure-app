@@ -33,7 +33,7 @@ a{
     color:inherit;
 }
 
-/* hero section with background image */
+/* HERO SECTION */
 .hero{
     text-align:center;
     padding:120px 20px;
@@ -54,6 +54,26 @@ a{
 .hero p{
     font-size:20px;
     margin-bottom:20px;
+}
+
+/* 👉 NEW EXTRA IMAGE SECTION (ATTRACTION IMAGE) */
+.front-image{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.front-image img{
+    width:80%;
+    max-width:900px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.front-image img:hover{
+    transform:scale(1.03);
 }
 
 /* buttons */
@@ -102,9 +122,14 @@ button:hover{
     box-shadow:0px 12px 25px rgba(0,0,0,0.15);
 }
 
-/* dashboard */
+/* DASHBOARD FIX (CENTER ALIGN) */
 .dashboard-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
+    min-height:60vh;
     padding:50px;
 }
 
@@ -126,6 +151,7 @@ input, select{
     width:280px;
     border-radius:10px;
     border:1px solid #cbd5e1;
+    margin:10px 0;
 }
 
 /* footer */
