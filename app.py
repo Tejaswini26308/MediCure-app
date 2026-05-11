@@ -163,9 +163,32 @@ def report():
 def symptom():
     return render_template('symptom.html')
 
-@app.route('/chatbot')
-def chatbot():
-    return render_template('chatbot.html')
+@app.route('/chatbot_response', methods=['POST'])
+def chatbot_response():
+    user_message = request.form['message'].lower()
+
+    if "fever" in user_message:
+        reply = "Drink plenty of water, take rest, and consult a doctor if fever continues."
+
+    elif "cold" in user_message:
+        reply = "Drink warm water and take proper rest."
+
+    elif "headache" in user_message:
+        reply = "Stay hydrated and avoid screen time."
+
+    elif "cough" in user_message:
+        reply = "Use warm fluids and consult a doctor if severe."
+
+    elif "pet vomiting" in user_message:
+        reply = "Please consult a veterinarian immediately."
+
+    elif "dog fever" in user_message:
+        reply = "Monitor temperature and visit a vet."
+
+    else:
+        reply = "Please consult a healthcare professional for accurate advice."
+
+    return f"<h2>{reply}</h2><br><a href='/chatbot'>Go Back</a>"
 
 @app.route('/remedies')
 def remedies():
