@@ -163,6 +163,10 @@ def report():
 def symptom():
     return render_template('symptom.html')
 
+@app.route('/chatbot')
+def chatbot():
+    return render_template('chatbot.html')
+
 @app.route('/chatbot_response', methods=['POST'])
 def chatbot_response():
     user_message = request.form['message'].lower()
