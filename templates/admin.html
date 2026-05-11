@@ -44,6 +44,12 @@
 
     <br><br>
 
+    <h2>Healthcare Analytics Graph</h2>
+
+<div style="width:80%; margin:auto;">
+    <canvas id="myChart"></canvas>
+</div>
+
     <h2>Booked Human Appointments</h2>
 
     <table border="1" align="center" cellpadding="10">
@@ -67,6 +73,51 @@
     </table>
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [
+            'Human Appointments',
+            'Vet Appointments',
+            'Reports',
+            'Pet Records',
+            'Vaccinations'
+        ],
+        datasets: [{
+            label: 'MediCure Analytics',
+            data: [
+                {{ total_appointments }},
+                {{ total_vet }},
+                {{ total_reports }},
+                {{ total_pet_records }},
+                {{ total_vaccinations }}
+            ],
+            backgroundColor: [
+                '#14b8a6',
+                '#1e3a8a',
+                '#38bdf8',
+                '#22c55e',
+                '#f97316'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true
+            }
+        }
+    }
+});
+</script>
 
 </body>
 </html>
