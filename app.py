@@ -63,6 +63,16 @@ CREATE TABLE IF NOT EXISTS vaccinations (
 
 conn.commit()
 
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT,
+    password TEXT,
+    role TEXT
+)
+""")
+conn.commit()
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -214,6 +224,15 @@ def vaccination():
         return "Vaccination Reminder Set Successfully!"
 
     return render_template('vaccination.html')
+
+@app.route('/forgot-password')
+def forgot_password():
+    return render_template("forgot_password.html")
+
+@app.route('/reset', methods=['POST'])
+def reset():
+    email = request.form['email']
+    return render_template("login.html")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login - MediVerse AI</title>
+    <title>Login - MediCure AI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <div class="login-container">
-    <h1>Login to MediVerse AI</h1>
+    <h1>Login to MediCure AI</h1>
 
     <form>
         <input type="text" placeholder="Enter Email"><br><br>
         <input type="password" placeholder="Enter Password"><br><br>
+        <a href="/forgot-password" style="display:block; margin:10px 0; color:#1e3a8a;">
+    Forgot Password?
+</a>
 
         <select>
             <option>Human Healthcare</option>
