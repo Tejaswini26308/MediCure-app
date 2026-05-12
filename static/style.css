@@ -5,29 +5,34 @@
     font-family: Arial, sans-serif;
 }
 
-/* body background */
+/* BODY */
 body{
-    background: linear-gradient(135deg,#f8fafc,#e0f2fe);
-    color:#1e293b;
+    background:#0b1120;
+    color:white;
 }
 
-/* navbar */
+/* NAVBAR */
 nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background: linear-gradient(90deg,#0f172a,#1e3a8a);
+    background:#111827;
     color:white;
     padding:20px 40px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
 
 nav ul{
     list-style:none;
     display:flex;
-    gap:20px;
+    gap:25px;
 }
 
+nav ul li a:hover{
+    color:#06b6d4;
+}
+
+/* LINKS */
 a{
     text-decoration:none;
     color:inherit;
@@ -39,7 +44,7 @@ a{
     padding:120px 20px;
     color:white;
     background:
-    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
     url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1f");
     background-size:cover;
     background-position:center;
@@ -47,16 +52,18 @@ a{
 }
 
 .hero h2{
-    font-size:50px;
+    font-size:55px;
+    font-weight:bold;
     margin-bottom:20px;
 }
 
 .hero p{
     font-size:20px;
     margin-bottom:20px;
+    color:#d1d5db;
 }
 
-/* 👉 NEW EXTRA IMAGE SECTION (ATTRACTION IMAGE) */
+/* FRONT IMAGE */
 .front-image{
     width:100%;
     display:flex;
@@ -68,7 +75,7 @@ a{
     width:80%;
     max-width:900px;
     border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
     transition:0.3s;
 }
 
@@ -76,9 +83,9 @@ a{
     transform:scale(1.03);
 }
 
-/* buttons */
+/* BUTTONS */
 button{
-    background:#14b8a6;
+    background:#06b6d4;
     color:white;
     padding:12px 25px;
     border:none;
@@ -90,16 +97,22 @@ button{
 
 button:hover{
     transform:scale(1.08);
-    background:#0f766e;
+    background:#0891b2;
 }
 
-/* services */
+/* SERVICES */
 .services{
     text-align:center;
     padding:60px;
 }
 
-/* cards */
+.services h2{
+    font-size:35px;
+    margin-bottom:30px;
+    color:white;
+}
+
+/* CARD CONTAINER */
 .card-container{
     display:flex;
     justify-content:center;
@@ -107,22 +120,35 @@ button:hover{
     flex-wrap:wrap;
 }
 
+/* PREMIUM GLASS CARDS */
 .card{
-    background:white;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
     width:320px;
     padding:20px;
     border-radius:20px;
-    box-shadow:0px 10px 25px rgba(0,0,0,0.1);
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0px 10px 25px rgba(0,0,0,0.3);
     transition:0.4s;
     overflow:hidden;
+    color:white;
 }
 
 .card:hover{
     transform:translateY(-12px);
-    box-shadow:0px 15px 30px rgba(0,0,0,0.2);
+    box-shadow:0px 15px 30px rgba(0,0,0,0.4);
 }
 
-/* DASHBOARD FIX (CENTER ALIGN) */
+/* CARD IMAGES */
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+
+/* DASHBOARD */
 .dashboard-container{
     display:flex;
     flex-direction:column;
@@ -136,39 +162,49 @@ button:hover{
 .dashboard-container h1{
     margin-bottom:30px;
     font-size:35px;
-    color:#1e3a8a;
+    color:white;
 }
 
-/* login */
+/* LOGIN */
 .login-container{
     text-align:center;
     margin-top:100px;
 }
 
-/* forms */
+/* FORMS */
 input, select{
     padding:12px;
     width:280px;
     border-radius:10px;
-    border:1px solid #cbd5e1;
+    border:none;
     margin:10px 0;
+    background:#1e293b;
+    color:white;
 }
 
-/* footer */
+/* TABLE */
+table{
+    background:white;
+    color:black;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+/* FOOTER */
 footer{
     text-align:center;
-    background:#0f172a;
+    background:#111827;
     color:white;
     padding:20px;
     margin-top:40px;
 }
 
-/* back button */
+/* BACK BUTTON */
 .back-btn{
     position:absolute;
     top:20px;
     left:20px;
-    background:#14b8a6;
+    background:#06b6d4;
     color:white;
     padding:10px 20px;
     border-radius:20px;
@@ -177,10 +213,10 @@ footer{
 }
 
 .back-btn:hover{
-    background:#0f766e;
+    background:#0891b2;
 }
 
-/* animation */
+/* ANIMATION */
 @keyframes fadeIn{
     from{
         opacity:0;
@@ -190,30 +226,4 @@ footer{
         opacity:1;
         transform:translateY(0px);
     }
-}
-.card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-    border-radius:15px;
-    margin-bottom:15px;
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-radius:15px;
-    margin-bottom:15px;
-}
-
-.services h2{
-    font-size:35px;
-    margin-bottom:30px;
-    color:#1e3a8a;
-}
-
-.hero h2{
-    font-size:55px;
-    font-weight:bold;
 }
