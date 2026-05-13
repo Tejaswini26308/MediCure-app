@@ -4,31 +4,52 @@
     <title>Heart Monitor</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="tracker-page">
+<body class="heart-monitor-page">
 
 <a href="/dashboard" class="back-btn">⬅ Back</a>
 
-<div class="watch-container">
-    <h1>❤️ Heart Monitor</h1>
+<div class="heart-dashboard">
 
-    <div class="circle-box">
-        <h2>120</h2>
-        <p>BPM</p>
+    <!-- Left Side Heart -->
+    <div class="heart-left">
+        <img src="{{ url_for('static', filename='heart.gif') }}" 
+             alt="Heart"
+             class="real-heart">
     </div>
 
-    <div class="wave"></div>
+    <!-- Right Side Monitor -->
+    <div class="heart-right">
 
-    <div class="stats-row">
-        <div>
-            <h3>42</h3>
-            <p>MIN BPM</p>
+        <h1>Heart Rate Monitor</h1>
+
+        <div class="ecg-container">
+            <div class="ecg-line"></div>
         </div>
 
-        <div>
-            <h3>131</h3>
-            <p>MAX BPM</p>
+        <div class="bpm-box">
+            <h2>72</h2>
+            <p>BPM</p>
         </div>
+
+        <div class="health-stats">
+            <div class="stat-card">
+                <h3>120/80</h3>
+                <p>Blood Pressure</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>98%</h3>
+                <p>Oxygen Level</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Normal</h3>
+                <p>Status</p>
+            </div>
+        </div>
+
     </div>
+
 </div>
 
 </body>
