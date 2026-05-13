@@ -25,14 +25,13 @@
 </div>
 </nav>
 
-<section class="hero">
+<section class="hero".id="hero"></section>
     <h2>Smart Healthcare For Humans & Pets</h2>
 
     <p>
         Your health deserves smarter care —
         instant support, faster recovery,
         and healthcare at your fingertips.
-</p>
     </p>
 
     <a href="/dashboard">
@@ -72,6 +71,26 @@
 <footer>
     <p>© 2026 MediCure AI | Powered by Team MediCure</p>
 </footer>
+<script>
+const hero = document.getElementById("hero");
 
+const images = [
+    "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f",
+    "https://images.unsplash.com/photo-1584515933487-779824d29309",
+    "https://images.unsplash.com/photo-1576201836106-db1758fd1c97"
+];
+
+let index = 0;
+
+setInterval(() => {
+    hero.style.backgroundImage =
+    `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(${images[index]})`;
+
+    hero.style.backgroundSize = "cover";
+    hero.style.backgroundPosition = "center";
+
+    index = (index + 1) % images.length;
+}, 3000);
+</script>
 </body>
 </html>
