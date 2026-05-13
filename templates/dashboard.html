@@ -156,14 +156,23 @@ function findHospitals() {
 
     let hospitalList = hospitals[city];
 
-    let output = "<h3>Nearby Hospitals:</h3><ul>";
+    let output = "<h3>Nearby Hospitals:</h3>";
 
-    hospitalList.forEach(function(hospital){
-        output += "<li>" + hospital + "</li>";
-    });
-
-    output += "</ul>";
-
+hospitalList.forEach(function(hospital){
+    output += `
+        <div style="
+            background:#1e293b;
+            padding:15px;
+            margin:10px;
+            border-radius:15px;
+            color:white;
+        ">
+            <h4>${hospital}</h4>
+            <p>Available: 24/7 Emergency</p>
+            <p>Contact: +91 9876543210</p>
+        </div>
+    `;
+});
     result.innerHTML = output;
 }
 </script>
