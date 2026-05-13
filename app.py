@@ -1,8 +1,23 @@
+from authlib.integrations.flask_client import OAuth
+from flask import redirect, session
 from flask import Flask, render_template, request
 import sqlite3
 import os
 
 app = Flask(__name__)
+app.secret_key = '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'  # Replace with a real secret key
+
+oauth = OAuth(app)
+
+google = oauth.register(
+    name='google',
+    client_id='733850428574-eu546hvn2f987tnvj3roil1ebtlcj422.apps.googleusercontent.com',
+    client_secret='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',
+    server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
+    client_kwargs={
+        'scope': 'openid email profile'
+    }
+)
 UPLOAD_FOLDER = "uploads"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
