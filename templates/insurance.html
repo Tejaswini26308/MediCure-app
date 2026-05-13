@@ -1,75 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Health Insurance - MediCure AI</title>
+    <title>Insurance Process</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
 
-<button onclick="toggleTheme()" id="theme-btn">🌙</button>
-
-<a href="/dashboard" class="back-btn">← Back</a>
+<a href="/dashboard" class="back-btn">⬅ Back</a>
 
 <div class="dashboard-container">
 
-    <h1>Smart Health Insurance Solutions</h1>
+    <h1>Health Insurance Assistance</h1>
+    <p>Know plans, process and claim tracking</p>
 
-    <p style="max-width:900px; line-height:1.8; margin-bottom:40px;">
-        Health insurance helps protect individuals and families from rising
-        medical expenses. MediCure AI provides awareness about insurance plans,
-        benefits, and claim processes for better healthcare decisions.
-    </p>
+    <div class="quick-features">
 
-    <div class="card-container">
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85">
-            <h2>Individual Insurance</h2>
-            <p>Covers one person for hospital bills, medicines and surgeries.</p>
+        <div class="quick-card">
+            <i class="fa-solid fa-file-medical"></i>
+            <h3>Step 1</h3>
+            <p>Select Insurance Plan</p>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300">
-            <h2>Family Floater Plan</h2>
-            <p>One policy covers spouse, children and parents.</p>
+        <div class="quick-card">
+            <i class="fa-solid fa-id-card"></i>
+            <h3>Step 2</h3>
+            <p>Upload Required Documents</p>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21">
-            <h2>Senior Citizen Insurance</h2>
-            <p>Special plans for elderly healthcare needs.</p>
+        <div class="quick-card">
+            <i class="fa-solid fa-user-check"></i>
+            <h3>Step 3</h3>
+            <p>Verification Process</p>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0">
-            <h2>Critical Illness Plan</h2>
-            <p>Lump sum coverage for major diseases like cancer or stroke.</p>
+        <div class="quick-card">
+            <i class="fa-solid fa-hospital"></i>
+            <h3>Step 4</h3>
+            <p>Hospital Approval</p>
         </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1542223616-740d5dff2f1f">
-            <h2>Pet Insurance</h2>
-            <p>Protect pets from unexpected veterinary expenses.</p>
+        <div class="quick-card">
+            <i class="fa-solid fa-money-check-dollar"></i>
+            <h3>Step 5</h3>
+            <p>Claim Settlement</p>
         </div>
 
     </div>
 
     <br><br>
 
-    <h2>Insurance Benefits</h2>
+    <div class="location-section">
+        <h2>Required Documents</h2>
 
-    <p style="max-width:900px; line-height:1.8;">
-        ✔ Cashless treatment <br>
-        ✔ Pre/Post hospitalization coverage <br>
-        ✔ Tax benefits <br>
-        ✔ No claim bonus <br>
-        ✔ Emergency support
-    </p>
+        <ul style="text-align:left; line-height:2;">
+            <li>Aadhar Card</li>
+            <li>Hospital Bills</li>
+            <li>Medical Reports</li>
+            <li>Doctor Prescription</li>
+            <li>Bank Details</li>
+        </ul>
+    </div>
+
+    <br><br>
+
+    <div class="location-section">
+        <h2>Track Insurance Status</h2>
+
+        <input type="text" placeholder="Enter Claim ID">
+
+        <button>Track Status</button>
+    </div>
 
 </div>
-
-<script src="{{ url_for('static', filename='theme.js') }}"></script>
 
 </body>
 </html>
