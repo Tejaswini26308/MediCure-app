@@ -37,6 +37,22 @@ nav h1{
     color:#0077b6;
     font-weight:bold;
 }
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+nav ul li{
+    display:inline-block;
+}
+
+nav ul li a{
+    color:#023e8a;
+    font-weight:bold;
+}
+
 
 /* BUTTONS */
 button{
