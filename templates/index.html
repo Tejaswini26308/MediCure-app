@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <button onclick="toggleTheme()" id="theme-btn">
-    🌙
-</button>
 
 <nav>
     <h1>MediCure AI</h1>
@@ -21,16 +18,10 @@
         <li><a href="/contact">Contact</a></li>
     </ul>
 
-    <div style="display:flex; gap:10px; align-items:center;">
-
-        <button onclick="toggleTheme()" id="theme-btn">
-            🌙
-        </button>
-
-        <a href="/dashboard">
-            <button>Sign In</button>
+    <div>
+        <a href="/login">
+            <button>Get Started</button>
         </a>
-
     </div>
 </nav>
 
@@ -39,11 +30,12 @@
 
     <p>
         Book appointments, upload reports, manage pet care,
-        and chat with AI healthcare assistant.
+        track health stats, find nearby hospitals,
+        insurance guidance, and AI healthcare support.
     </p>
 
-    <a href="/login">
-        <button>Get Started</button>
+    <a href="/dashboard">
+        <button>Explore Services</button>
     </a>
 </section>
 
@@ -55,19 +47,19 @@
         <div class="card">
             <img src="https://images.unsplash.com/photo-1584515933487-779824d29309" alt="">
             <h3>Human Healthcare</h3>
-            <p>Book doctor appointments and upload medical reports.</p>
+            <p>Book doctor appointments and upload reports.</p>
         </div>
 
         <div class="card">
             <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97" alt="">
             <h3>Veterinary Care</h3>
-            <p>Pet appointments, vaccination reminders and pet health records.</p>
+            <p>Pet appointments and vaccination tracking.</p>
         </div>
 
         <div class="card">
             <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a" alt="">
-            <h3>AI Chat Support</h3>
-            <p>Get instant healthcare suggestions using AI chatbot.</p>
+            <h3>AI Health Assistant</h3>
+            <p>Chat support, health tracker and emergency SOS.</p>
         </div>
 
     </div>
@@ -76,21 +68,6 @@
 <footer>
     <p>© 2026 MediCure AI | Powered by Team MediCure</p>
 </footer>
-
-<script>
-function toggleTheme() {
-    document.body.classList.toggle("light-mode");
-
-    const btn = document.getElementById("theme-btn");
-
-    if(document.body.classList.contains("light-mode")){
-        btn.innerHTML = "☀️";
-    } 
-    else {
-        btn.innerHTML = "🌙";
-    }
-}
-</script>
 
 </body>
 </html>
