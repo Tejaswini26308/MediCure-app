@@ -429,3 +429,25 @@ footer{
     background:white;
     color:black;
 }
+.monitor-box{
+    background:black;
+    color:#00ff66;
+    padding:40px;
+    width:500px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.heartbeat-line{
+    width:100%;
+    height:4px;
+    background:lime;
+    margin-top:20px;
+    animation: pulseLine 1s infinite;
+}
+
+@keyframes pulseLine{
+    0%{transform:scaleX(0.8);}
+    50%{transform:scaleX(1.2);}
+    100%{transform:scaleX(0.8);}
+}

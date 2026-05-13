@@ -8,16 +8,13 @@
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav>
     <h1>MediCure</h1>
 
-    <div style="display:flex; gap:10px;">
-        <button onclick="toggleTheme()" id="theme-btn">🌙</button>
-
-        <a href="/">
-            <button>Home</button>
-        </a>
-    </div>
+    <a href="/">
+        <button>Home</button>
+    </a>
 </nav>
 
 <div class="dashboard-container">
@@ -25,32 +22,37 @@
     <h1>Your Health Services</h1>
     <p>Everything you need in one place</p>
 
-    <!-- Top Quick Features -->
+    <!-- QUICK HEALTH FEATURES -->
     <div class="quick-features">
 
-        <a href="/health-tracker">
-    <div class="quick-card">
-        <i class="fa-solid fa-heart-pulse"></i>
-        <h3>Heart Rate</h3>
-        <p>Track heartbeat</p>
-    </div>
-</a>
-        <a href="/health-tracker">
-    <div class="quick-card">
-        <i class="fa-solid fa-stethoscope"></i>
-        <h3>Pulse Rate</h3>
-        <p>Monitor pulse</p>
-    </div>
-</a>
+        <!-- Heart Rate -->
+        <a href="/heart-rate">
+            <div class="quick-card">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <h3>Heart Rate</h3>
+                <p>Live heart monitor</p>
+            </div>
+        </a>
 
-        <a href="/health-tracker">
-    <div class="quick-card">
-        <i class="fa-solid fa-person-running"></i>
-        <h3>Speed Check</h3>
-        <p>Health activity tracker</p>
-    </div>
-</a>
+        <!-- Pulse -->
+        <a href="/pulse">
+            <div class="quick-card">
+                <i class="fa-solid fa-stethoscope"></i>
+                <h3>Pulse Rate</h3>
+                <p>Track pulse health</p>
+            </div>
+        </a>
 
+        <!-- Speed -->
+        <a href="/speed">
+            <div class="quick-card">
+                <i class="fa-solid fa-person-running"></i>
+                <h3>Speed Tracker</h3>
+                <p>Smart activity tracker</p>
+            </div>
+        </a>
+
+        <!-- Hospital -->
         <div class="quick-card">
             <i class="fa-solid fa-location-dot"></i>
             <h3>Nearby Hospitals</h3>
@@ -59,7 +61,7 @@
 
     </div>
 
-    <!-- Main Service Cards -->
+    <!-- MAIN SERVICES -->
     <div class="card-container">
 
         <a href="/human">
@@ -74,7 +76,7 @@
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97">
                 <h2>Veterinary Care</h2>
-                <p>Pet health support</p>
+                <p>Pet healthcare support</p>
             </div>
         </a>
 
@@ -82,7 +84,7 @@
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef">
                 <h2>Hospital Admin</h2>
-                <p>Manage records</p>
+                <p>Manage hospital records</p>
             </div>
         </a>
 
@@ -90,7 +92,7 @@
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85">
                 <h2>Insurance Process</h2>
-                <p>Claims + full insurance guidance</p>
+                <p>Claims + documentation help</p>
             </div>
         </a>
 
@@ -98,30 +100,31 @@
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88">
                 <h2>Pharmacy</h2>
-                <p>Medicine support</p>
+                <p>Medicine guidance</p>
             </div>
         </a>
 
     </div>
 
-    <!-- Location Section -->
+    <!-- HOSPITAL FINDER -->
     <div class="location-section">
-    <h2>Find Nearby Hospitals</h2>
 
-    <select id="citySelect">
-        <option value="">Select City</option>
-        <option value="vijayawada">Vijayawada</option>
-        <option value="hyderabad">Hyderabad</option>
-        <option value="visakhapatnam">Visakhapatnam</option>
-    </select>
+        <h2>Find Nearby Hospitals</h2>
 
-    <button onclick="findHospitals()">Search Hospitals</button>
+        <select id="citySelect">
+            <option value="">Select City</option>
+            <option value="vijayawada">Vijayawada</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="visakhapatnam">Visakhapatnam</option>
+        </select>
 
-    <div id="hospitalResults" style="margin-top:20px;"></div>
+        <button onclick="findHospitals()">Search Hospitals</button>
+
+        <div id="hospitalResults" style="margin-top:20px;"></div>
+
+    </div>
+
 </div>
-</div>
-
-<script src="{{ url_for('static', filename='theme.js') }}"></script>
 
 <script>
 function findHospitals() {

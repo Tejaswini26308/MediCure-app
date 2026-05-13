@@ -342,5 +342,17 @@ def authorize():
 def health_tracker():
     return render_template('health_tracker.html')
 
+@app.route('/heart-rate')
+def heart_rate():
+    return render_template('heart_rate.html')
+
+@app.route('/pulse')
+def pulse():
+    return render_template('pulse.html')
+
+@app.route('/speed')
+def speed():
+    return render_template('speed.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
