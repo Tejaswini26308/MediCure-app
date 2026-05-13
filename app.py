@@ -5,7 +5,7 @@ import sqlite3
 import os
 
 app = Flask(__name__)
-app.secret_key = 'medicure_secret_key_123'  # Replace with a real secret key
+app.secret_key = 'Your_Secret_Key'  # Replace with a real secret key
 
 oauth = OAuth(app)
 
