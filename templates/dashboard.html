@@ -101,26 +101,64 @@
 
     <!-- Location Section -->
     <div class="location-section">
-        <h2>Find Nearby Hospitals</h2>
+    <h2>Find Nearby Hospitals</h2>
 
-        <select>
-            <option>Select State</option>
-            <option>Andhra Pradesh</option>
-            <option>Telangana</option>
-        </select>
+    <select id="citySelect">
+        <option value="">Select City</option>
+        <option value="vijayawada">Vijayawada</option>
+        <option value="hyderabad">Hyderabad</option>
+        <option value="visakhapatnam">Visakhapatnam</option>
+    </select>
 
-        <select>
-            <option>Select City</option>
-            <option>Vijayawada</option>
-            <option>Hyderabad</option>
-        </select>
+    <button onclick="findHospitals()">Search Hospitals</button>
 
-        <button>Search Hospitals</button>
-    </div>
-
+    <div id="hospitalResults" style="margin-top:20px;"></div>
+</div>
 </div>
 
 <script src="{{ url_for('static', filename='theme.js') }}"></script>
+
+<script>
+function findHospitals() {
+    let city = document.getElementById("citySelect").value;
+    let result = document.getElementById("hospitalResults");
+
+    let hospitals = {
+        vijayawada: [
+            "Andhra Hospitals",
+            "Ramesh Hospitals",
+            "Sentini Hospitals"
+        ],
+        hyderabad: [
+            "Apollo Hospitals",
+            "Yashoda Hospitals",
+            "Care Hospitals"
+        ],
+        visakhapatnam: [
+            "KIMS Hospital",
+            "Seven Hills Hospital",
+            "Apollo Vizag"
+        ]
+    };
+
+    if(city === ""){
+        result.innerHTML = "<p>Please select a city</p>";
+        return;
+    }
+
+    let hospitalList = hospitals[city];
+
+    let output = "<h3>Nearby Hospitals:</h3><ul>";
+
+    hospitalList.forEach(function(hospital){
+        output += "<li>" + hospital + "</li>";
+    });
+
+    output += "</ul>";
+
+    result.innerHTML = output;
+}
+</script>
 
 </body>
 </html>
