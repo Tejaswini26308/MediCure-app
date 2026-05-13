@@ -1,18 +1,18 @@
 from authlib.integrations.flask_client import OAuth
-from flask import redirect, session
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, session, url_for
 import sqlite3
 import os
 
 app = Flask(__name__)
-app.secret_key = 'Your_Secret_Key'  # Replace with a real secret key
+app.secret_key = os.environ.get("SECRET_KEY")
+  # Replace with a real secret key
 
 oauth = OAuth(app)
 
 google = oauth.register(
     name='google',
-    client_id='YOUR_CLIENT_ID', 
-    client_secret='YOUR_CLIENT_SECRET',
+    client_id = os.environ.get("GOOGLE_CLIENT_ID")
+client_secret = os.environ.get("GOOGLE_CLIENT_SECRET")
     server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
     client_kwargs={
         'scope': 'openid email profile'
