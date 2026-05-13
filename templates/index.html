@@ -25,18 +25,67 @@
 </div>
 </nav>
 
-<section class="hero".id="hero"></section>
+<section class="hero">
     <h2>Smart Healthcare For Humans & Pets</h2>
 
     <p>
         Your health deserves smarter care —
         instant support, faster recovery,
         and healthcare at your fingertips.
+</p>
     </p>
 
     <a href="/dashboard">
     <button>Get Started</button>
 </a>
+</section>
+<section class="image-slider-section">
+
+    <h2>Our Healthcare Network</h2>
+
+    <div class="slider-container">
+        <div class="slider-track">
+
+            <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d">
+                <h3>Hospitals</h3>
+            </div>
+
+            <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
+                <h3>Doctors</h3>
+            </div>
+
+            <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97">
+                <h3>Pet Care</h3>
+            </div>
+
+            <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88">
+                <h3>Pharmacy</h3>
+            </div>
+
+            <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85">
+                <h3>Insurance</h3>
+            </div>
+
+            <!-- duplicate for smooth infinite scroll -->
+
+            <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d">
+                <h3>Hospitals</h3>
+            </div>
+
+            <div class="slide-card">
+                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
+                <h3>Doctors</h3>
+            </div>
+
+        </div>
+    </div>
+
 </section>
 
 <section class="services">
@@ -71,26 +120,6 @@
 <footer>
     <p>© 2026 MediCure AI | Powered by Team MediCure</p>
 </footer>
-<script>
-const hero = document.getElementById("hero");
 
-const images = [
-    "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f",
-    "https://images.unsplash.com/photo-1584515933487-779824d29309",
-    "https://images.unsplash.com/photo-1576201836106-db1758fd1c97"
-];
-
-let index = 0;
-
-setInterval(() => {
-    hero.style.backgroundImage =
-    `linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(${images[index]})`;
-
-    hero.style.backgroundSize = "cover";
-    hero.style.backgroundPosition = "center";
-
-    index = (index + 1) % images.length;
-}, 3000);
-</script>
 </body>
 </html>
