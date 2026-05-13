@@ -181,6 +181,22 @@ function findHospitals() {
     result.innerHTML = output;
 }
 </script>
+<!-- Emergency SOS Button -->
+<div class="sos-btn" onclick="showSOS()">
+    🚨 SOS
+</div>
+
+<script>
+function showSOS(){
+    alert(
+        "Emergency Help:\\n\\n" +
+        "🚑 Ambulance: 108\\n" +
+        "👮 Police: 100\\n" +
+        "🔥 Fire: 101\\n\\n" +
+        "Nearest hospital available via hospital finder."
+    );
+}
+</script>
 
 </body>
 </html>
