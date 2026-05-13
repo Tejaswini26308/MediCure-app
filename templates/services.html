@@ -1,52 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Services</title>
+    <title>Our Services - MediCure AI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
-<button onclick="toggleTheme()" id="theme-btn">
-    🌙
-</button>
-<a href="/" class="back-btn">← Back</a>
+
+<nav>
+    <h1>MediCure Services</h1>
+
+    <div style="display:flex; gap:10px; align-items:center;">
+        <button onclick="toggleTheme()" id="theme-btn">🌙</button>
+
+        <a href="/">
+            <button>Home</button>
+        </a>
+    </div>
+</nav>
 
 <div class="dashboard-container">
-    <h1>Our Healthcare Services</h1>
+
+    <h1>Our Smart Healthcare Services</h1>
+
+    <p style="max-width:900px; line-height:1.8; margin-bottom:40px;">
+        MediCure AI provides complete healthcare services for both humans
+        and pets through one smart platform.
+    </p>
 
     <div class="card-container">
 
         <div class="card">
+            <img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
             <h2>Doctor Appointments</h2>
-            <p>Book appointments with healthcare professionals.</p>
+            <p>Book appointments with healthcare specialists easily.</p>
         </div>
 
         <div class="card">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5">
             <h2>Medical Reports</h2>
-            <p>Upload and manage health reports securely.</p>
+            <p>Upload and manage reports securely online.</p>
         </div>
 
         <div class="card">
+            <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a">
             <h2>AI Chatbot</h2>
-            <p>Get instant health suggestions.</p>
+            <p>Get quick healthcare guidance instantly.</p>
         </div>
 
         <div class="card">
+            <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97">
             <h2>Pet Care</h2>
-            <p>Vet appointments, vaccination reminders and pet records.</p>
+            <p>Vet appointments, pet records and vaccinations.</p>
         </div>
 
         <div class="card">
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f">
             <h2>Insurance</h2>
-            <p>Explore health insurance plans.</p>
+            <p>Health insurance plans and claim support.</p>
         </div>
 
         <div class="card">
+            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88">
             <h2>Pharmacy</h2>
-            <p>Medicine information and healthcare guidance.</p>
+            <p>Medicine information and prescription guidance.</p>
         </div>
 
     </div>
+
 </div>
 
 <script src="{{ url_for('static', filename='theme.js') }}"></script>

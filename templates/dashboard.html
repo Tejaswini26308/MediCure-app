@@ -5,19 +5,31 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <button onclick="toggleTheme()" id="theme-btn">
-    🌙
-</button>
+
+<nav>
+    <h1>MediCure Dashboard</h1>
+
+    <div style="display:flex; gap:10px; align-items:center;">
+        <button onclick="toggleTheme()" id="theme-btn">🌙</button>
+
+        <a href="/">
+            <button>Home</button>
+        </a>
+    </div>
+</nav>
 
 <div class="dashboard-container">
 
     <h1>Healthcare Dashboard</h1>
     <p>Select your healthcare service below</p>
 
+    <br><br>
+
     <div class="card-container">
 
         <a href="/human">
             <div class="card">
+                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
                 <h2>Human Healthcare</h2>
                 <p>Symptom checker, reports, appointments</p>
             </div>
@@ -25,6 +37,7 @@
 
         <a href="/vet">
             <div class="card">
+                <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97">
                 <h2>Veterinary Care</h2>
                 <p>Pet health support and vet booking</p>
             </div>
@@ -32,6 +45,7 @@
 
         <a href="/admin">
             <div class="card">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef">
                 <h2>Hospital Admin</h2>
                 <p>Manage schedules and records</p>
             </div>
@@ -39,6 +53,7 @@
 
         <a href="/insurance">
             <div class="card">
+                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85">
                 <h2>Insurance</h2>
                 <p>Health insurance plans and claims support</p>
             </div>
@@ -46,6 +61,7 @@
 
         <a href="/pharmacy">
             <div class="card">
+                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88">
                 <h2>Pharmacy</h2>
                 <p>Medicine information and healthcare support</p>
             </div>
@@ -54,6 +70,7 @@
     </div>
 
 </div>
+
 <script src="{{ url_for('static', filename='theme.js') }}"></script>
 
 </body>

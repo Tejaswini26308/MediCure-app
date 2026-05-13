@@ -7,8 +7,9 @@
 
 /* BODY */
 body{
-    background:#0b1120;
+    background: linear-gradient(135deg,#0b1120,#111827,#1e293b);
     color:white;
+    min-height:100vh;
 }
 
 /* NAVBAR */
@@ -16,10 +17,14 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:#111827;
+    background: rgba(17,24,39,0.9);
+    backdrop-filter: blur(10px);
     color:white;
     padding:20px 40px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.3);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 20px rgba(0,0,0,0.3);
 }
 
 nav ul{
@@ -38,13 +43,13 @@ a{
     color:inherit;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero{
     text-align:center;
     padding:120px 20px;
     color:white;
     background:
-    linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
     url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1f");
     background-size:cover;
     background-position:center;
@@ -59,28 +64,8 @@ a{
 
 .hero p{
     font-size:20px;
-    margin-bottom:20px;
     color:#d1d5db;
-}
-
-/* FRONT IMAGE */
-.front-image{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    margin-top:40px;
-}
-
-.front-image img{
-    width:80%;
-    max-width:900px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.4);
-    transition:0.3s;
-}
-
-.front-image img:hover{
-    transform:scale(1.03);
+    margin-bottom:25px;
 }
 
 /* BUTTONS */
@@ -96,20 +81,19 @@ button{
 }
 
 button:hover{
-    transform:scale(1.08);
+    transform:scale(1.05);
     background:#0891b2;
 }
 
 /* SERVICES */
 .services{
     text-align:center;
-    padding:60px;
+    padding:70px;
 }
 
 .services h2{
     font-size:35px;
     margin-bottom:30px;
-    color:white;
 }
 
 /* CARD CONTAINER */
@@ -120,10 +104,10 @@ button:hover{
     flex-wrap:wrap;
 }
 
-/* PREMIUM GLASS CARDS */
+/* PREMIUM CARDS */
 .card{
     background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
     width:320px;
     padding:20px;
     border-radius:20px;
@@ -135,7 +119,7 @@ button:hover{
 }
 
 .card:hover{
-    transform:translateY(-12px);
+    transform:translateY(-10px);
     box-shadow:0px 15px 30px rgba(0,0,0,0.4);
 }
 
@@ -155,14 +139,13 @@ button:hover{
     justify-content:center;
     align-items:center;
     text-align:center;
-    min-height:60vh;
+    min-height:80vh;
     padding:50px;
 }
 
 .dashboard-container h1{
     margin-bottom:30px;
     font-size:35px;
-    color:white;
 }
 
 /* LOGIN */
@@ -172,7 +155,7 @@ button:hover{
 }
 
 /* FORMS */
-input, select{
+input, select, textarea{
     padding:12px;
     width:280px;
     border-radius:10px;
@@ -208,7 +191,6 @@ footer{
     color:white;
     padding:10px 20px;
     border-radius:20px;
-    text-decoration:none;
     font-weight:bold;
 }
 
@@ -231,78 +213,38 @@ footer{
 /* LIGHT MODE */
 .light-mode{
     background: #f8fafc;
-    color: #111827;
+    color:#111827;
 }
 
-/* navbar light */
 .light-mode nav{
-    background: white;
-    color: black;
-}
-
-/* cards light */
-.light-mode .card{
-    background: white;
-    color: black;
-    border: 1px solid #ddd;
-}
-
-/* footer light */
-.light-mode footer{
-    background: #e5e7eb;
-    color: black;
-}
-
-/* forms light */
-.light-mode input,
-.light-mode select{
     background:white;
     color:black;
-    border:1px solid #ccc;
-}
-
-/* LIGHT MODE FULL APP */
-
-.light-mode{
-    background: #f8fafc;
-    color: #111827;
-}
-
-.light-mode nav{
-    background: white;
-    color: black;
 }
 
 .light-mode .card{
-    background: white;
-    color: black;
-    border: 1px solid #ddd;
+    background:white;
+    color:black;
+    border:1px solid #ddd;
 }
 
 .light-mode footer{
-    background: #e5e7eb;
-    color: black;
+    background:#e5e7eb;
+    color:black;
 }
 
 .light-mode input,
 .light-mode select,
 .light-mode textarea{
-    background: white;
-    color: black;
-    border: 1px solid #ccc;
+    background:white;
+    color:black;
+    border:1px solid #ccc;
 }
 
 .light-mode table{
-    background: white;
-    color: black;
-}
-
-.light-mode .dashboard-container{
-    background: #f8fafc;
-    color: black;
+    background:white;
+    color:black;
 }
 
 .light-mode button{
-    background: #2563eb;
-    color: white;
+    background:#2563eb;
 }

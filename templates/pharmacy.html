@@ -1,19 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Pharmacy</title>
+    <title>Pharmacy - MediCure AI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    <button onclick="toggleTheme()" id="theme-btn">
-    🌙
-</button>
-    <a href="/dashboard" class="back-btn">← Back</a>
 
-    <h1>Medicine Information</h1>
+<nav>
+    <h1>MediCure Pharmacy</h1>
 
-<ul>
-    <li>Paracetamol - Fever relief</li>
-    <li>Cetirizine - Cold/Allergy</li>
-    <li>ORS - Dehydration</li>
-</ul>
-    <script src="{{ url_for('static', filename='theme.js') }}"></script>
+    <div style="display:flex; gap:10px;">
+        <button onclick="toggleTheme()" id="theme-btn">🌙</button>
+
+        <a href="/">
+            <button>Home</button>
+        </a>
+    </div>
+</nav>
+
+<div class="dashboard-container">
+
+    <h1>Medicine Information Center</h1>
+
+    <p style="max-width:900px; line-height:1.8; margin-bottom:30px;">
+        MediCure Pharmacy helps users understand commonly used medicines,
+        their purpose, and safety precautions. This information is only for
+        awareness purposes. Always consult doctors before taking medication.
+    </p>
+
+    <!-- Medicine Cards -->
+    <div class="card-container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88">
+            <h2>Pain Relief</h2>
+            <p>Paracetamol, Ibuprofen</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de">
+            <h2>Cold & Allergy</h2>
+            <p>Cetirizine, Loratadine</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67">
+            <h2>Digestive Medicines</h2>
+            <p>ORS, Pantoprazole, Omeprazole</p>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <h2>Common Medicine Table</h2>
+
+    <table border="1" cellpadding="12" cellspacing="0">
+        <tr>
+            <th>Medicine</th>
+            <th>Used For</th>
+        </tr>
+
+        <tr>
+            <td>Paracetamol</td>
+            <td>Fever & Pain Relief</td>
+        </tr>
+
+        <tr>
+            <td>Ibuprofen</td>
+            <td>Inflammation & Pain</td>
+        </tr>
+
+        <tr>
+            <td>Cetirizine</td>
+            <td>Cold & Allergy</td>
+        </tr>
+
+        <tr>
+            <td>ORS</td>
+            <td>Dehydration</td>
+        </tr>
+
+        <tr>
+            <td>Omeprazole</td>
+            <td>Acidity</td>
+        </tr>
+
+        <tr>
+            <td>Loratadine</td>
+            <td>Allergy Relief</td>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <h2>Medicine Safety Tips</h2>
+
+    <p style="max-width:900px; line-height:1.8;">
+        ✔ Never overdose medicines <br>
+        ✔ Always check expiry date <br>
+        ✔ Consult doctor during pregnancy <br>
+        ✔ Avoid mixing multiple medicines without advice <br>
+        ✔ Visit doctor if symptoms continue for more than 3 days
+    </p>
+
+</div>
+
+<script src="{{ url_for('static', filename='theme.js') }}"></script>
+
 </body>
+</html>

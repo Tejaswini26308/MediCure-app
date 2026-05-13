@@ -1,28 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Contact</title>
+    <title>Contact MediCure AI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <button onclick="toggleTheme()" id="theme-btn">
-    🌙
-</button>
-<a href="/dashboard" class="back-btn">← Back</a>
-<div class="dashboard-container"></div>
 
-    <h1>Contact Us</h1>
-    <p>Email: medicure@gmail.com</p>
-    <p>Emergency: 108</p>
-    <p>Address: 123 Health St, Wellness City</p>
-    <p>Phone: +1 234 567 8900</p>
-    <p>Follow us on social media:</p>
-    <ul>
-        <li><a href="https://www.facebook.com/medicure">Facebook</a></li>
-        <li><a href="https://www.twitter.com/medicure">Twitter</a></li>
-        <li><a href="https://www.instagram.com/medicure">Instagram</a></li>
-    </ul>
-    <p>For inquiries, please email us at <a href="mailto:medicure
-@gmail.com">
+<body>
+
+<nav>
+    <h1>Contact MediCure AI</h1>
+
+    <div style="display:flex; gap:10px; align-items:center;">
+        <button onclick="toggleTheme()" id="theme-btn">🌙</button>
+
+        <a href="/">
+            <button>Home</button>
+        </a>
+    </div>
+</nav>
+
+<div class="dashboard-container">
+
+    <h1>Get In Touch With Us</h1>
+
+    <p style="max-width:800px; line-height:1.8; margin-bottom:30px;">
+        We are here to support your healthcare needs for both humans and pets.
+        Contact us anytime for appointments, insurance help, pharmacy guidance,
+        or technical support.
+    </p>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514">
+            <h2>Email Support</h2>
+            <p>medicure@gmail.com</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1584516150909-c43483ee7930">
+            <h2>Emergency Support</h2>
+            <p>Call: 108</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab">
+            <h2>Office Address</h2>
+            <p>123 Health Street, Wellness City</p>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216">
+            <h2>Phone Support</h2>
+            <p>+1 234 567 8900</p>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <h2>Follow Us</h2>
+
+    <p>
+        Facebook | Instagram | Twitter | LinkedIn
+    </p>
+
+</div>
 
 <script src="{{ url_for('static', filename='theme.js') }}"></script>
 
 </body>
+</html>

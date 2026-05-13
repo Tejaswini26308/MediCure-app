@@ -7,22 +7,28 @@
 
 <body>
 
-    <button onclick="toggleTheme()" id="theme-btn">
-    🌙
-</button>
+<nav>
+    <h1>About MediCure AI</h1>
 
-<a href="/" class="back-btn">← Back</a>
+    <div style="display:flex; gap:10px; align-items:center;">
+        <button onclick="toggleTheme()" id="theme-btn">🌙</button>
+
+        <a href="/">
+            <button>Home</button>
+        </a>
+    </div>
+</nav>
 
 <div class="dashboard-container">
 
-    <h1>About MediCure AI</h1>
+    <h1>Transforming Healthcare with Technology</h1>
 
-    <p style="max-width:900px; line-height:1.8; margin-bottom:30px;">
-        MediCure AI is an advanced healthcare management platform designed to provide
-        smart healthcare services for both humans and pets in one single application.
-        Our goal is to simplify healthcare access by combining doctor appointments,
-        medical report management, AI health assistance, veterinary care, insurance
-        services, pharmacy guidance, and hospital administration features.
+    <p style="max-width:900px; line-height:1.8; margin-bottom:40px;">
+        MediCure AI is an advanced healthcare platform built to support both
+        human healthcare and veterinary healthcare services in one ecosystem.
+        It simplifies healthcare by integrating appointments, reports,
+        AI chatbot assistance, insurance support, pharmacy services,
+        pet care management, and hospital analytics.
     </p>
 
     <div class="card-container">
@@ -30,51 +36,37 @@
         <div class="card">
             <img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
             <h2>Human Healthcare</h2>
-            <p>
-                Book doctor appointments, upload reports, symptom checking,
-                and home remedies support.
-            </p>
+            <p>Doctor appointments, reports and symptom support.</p>
         </div>
 
         <div class="card">
             <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97">
             <h2>Veterinary Care</h2>
-            <p>
-                Pet appointments, vaccination reminders,
-                pet symptom analysis and health records.
-            </p>
+            <p>Pet appointments, vaccinations and health records.</p>
         </div>
 
         <div class="card">
             <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a">
             <h2>AI Chatbot</h2>
-            <p>
-                Instant AI healthcare support for common health problems.
-            </p>
+            <p>Instant healthcare suggestions for common issues.</p>
         </div>
 
         <div class="card">
             <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef">
-            <h2>Hospital Admin</h2>
-            <p>
-                Manage appointments, analytics, reports and healthcare operations.
-            </p>
+            <h2>Hospital Analytics</h2>
+            <p>Track appointments, reports and healthcare data.</p>
         </div>
 
         <div class="card">
             <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f">
             <h2>Insurance</h2>
-            <p>
-                Explore healthcare insurance services for better protection.
-            </p>
+            <p>Healthcare coverage and claim support.</p>
         </div>
 
         <div class="card">
             <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88">
             <h2>Pharmacy</h2>
-            <p>
-                Medicine guidance and healthcare information support.
-            </p>
+            <p>Medicine guidance and health information.</p>
         </div>
 
     </div>
@@ -84,13 +76,13 @@
     <h2>Why MediCure AI?</h2>
 
     <p style="max-width:900px; line-height:1.8;">
-        MediCure AI combines multiple healthcare services into one platform,
-        making healthcare faster, smarter, and more accessible for both humans
-        and pets. It saves time, improves healthcare management, and offers
-        a modern digital healthcare experience.
+        Our platform reduces healthcare complexity by bringing multiple
+        services into one place. It improves convenience, saves time,
+        and creates a smarter healthcare experience for users.
     </p>
 
 </div>
+
 <script src="{{ url_for('static', filename='theme.js') }}"></script>
 
 </body>
