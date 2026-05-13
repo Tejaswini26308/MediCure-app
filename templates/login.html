@@ -5,7 +5,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
+<button onclick="toggleTheme()" id="theme-btn">
+    🌙
+</button>
 <div class="login-container">
     <h1>Welcome Back to MediCure AI</h1>
 <p>Secure healthcare login portal</p>
@@ -30,5 +32,13 @@
     </form>
 </div>
 
+<script>
+ document.querySelector('form').addEventListener('submit', function(e) {
+     e.preventDefault();
+     alert('Login functionality is not implemented in this demo.');
+ });
+</script>
+
+<script src="{{ url_for('static', filename='theme.js') }}"></script>
 </body>
 </html>

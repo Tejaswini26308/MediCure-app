@@ -3,7 +3,26 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <button onclick="toggleTheme()" id="theme-btn">
+    🌙
+</button>
+<a href="/dashboard" class="back-btn">← Back</a>
+<div class="dashboard-container"></div>
+
     <h1>Contact Us</h1>
     <p>Email: medicure@gmail.com</p>
     <p>Emergency: 108</p>
+    <p>Address: 123 Health St, Wellness City</p>
+    <p>Phone: +1 234 567 8900</p>
+    <p>Follow us on social media:</p>
+    <ul>
+        <li><a href="https://www.facebook.com/medicure">Facebook</a></li>
+        <li><a href="https://www.twitter.com/medicure">Twitter</a></li>
+        <li><a href="https://www.instagram.com/medicure">Instagram</a></li>
+    </ul>
+    <p>For inquiries, please email us at <a href="mailto:medicure
+@gmail.com">
+
+<script src="{{ url_for('static', filename='theme.js') }}"></script>
+
 </body>

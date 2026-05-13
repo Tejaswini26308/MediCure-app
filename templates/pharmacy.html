@@ -3,6 +3,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <button onclick="toggleTheme()" id="theme-btn">
+    🌙
+</button>
+    <a href="/dashboard" class="back-btn">← Back</a>
+
     <h1>Medicine Information</h1>
 
 <ul>
@@ -10,4 +15,5 @@
     <li>Cetirizine - Cold/Allergy</li>
     <li>ORS - Dehydration</li>
 </ul>
+    <script src="{{ url_for('static', filename='theme.js') }}"></script>
 </body>

@@ -3,6 +3,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <button onclick="toggleTheme()" id="theme-btn">
+    🌙
+</button>
+    <a href="/dashboard" class="back-btn">← Back</a>
+    
     <h1>Health Insurance</h1>
 
 <ul>
@@ -10,3 +15,10 @@
     <li>Family Health Insurance</li>
     <li>Pet Insurance</li>
 </ul>
+    <p>
+        Explore our health insurance plans to protect yourself and your loved ones. We offer comprehensive coverage for medical expenses, including doctor visits, hospital stays, medications, and preventive care. Our family health insurance plans provide coverage for all members of your household, while our pet insurance ensures your furry friends receive the best care without financial stress. Contact us to learn more about our insurance options and find the right plan for you.
+    </p>
+
+    <script src="{{ url_for('static', filename='theme.js') }}"></script>
+</body>
+</html> 

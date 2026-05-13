@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <button onclick="toggleTheme()" id="theme-btn">
+    🌙
+</button>
 
 <a href="/vet" class="back-btn">← Back</a>
 
@@ -23,6 +26,8 @@
     </form>
 
 </div>
+
+<script src="{{ url_for('static', filename='theme.js') }}"></script>
 
 </body>
 </html>

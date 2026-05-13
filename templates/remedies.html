@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <button onclick="toggleTheme()" id="theme-btn">
+    🌙
+</button>
 
     <a href="/human" class="back-btn">← Back</a>
 
@@ -21,6 +24,8 @@
         Suggested Remedy: Drink warm water, rest well, and eat healthy food.
     </h3>
 </div>
+
+<script src="{{ url_for('static', filename='theme.js') }}"></script>
 
 </body>
 </html>

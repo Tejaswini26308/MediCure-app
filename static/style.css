@@ -260,3 +260,49 @@ footer{
     color:black;
     border:1px solid #ccc;
 }
+
+/* LIGHT MODE FULL APP */
+
+.light-mode{
+    background: #f8fafc;
+    color: #111827;
+}
+
+.light-mode nav{
+    background: white;
+    color: black;
+}
+
+.light-mode .card{
+    background: white;
+    color: black;
+    border: 1px solid #ddd;
+}
+
+.light-mode footer{
+    background: #e5e7eb;
+    color: black;
+}
+
+.light-mode input,
+.light-mode select,
+.light-mode textarea{
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+}
+
+.light-mode table{
+    background: white;
+    color: black;
+}
+
+.light-mode .dashboard-container{
+    background: #f8fafc;
+    color: black;
+}
+
+.light-mode button{
+    background: #2563eb;
+    color: white;
+}
