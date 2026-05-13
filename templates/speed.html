@@ -4,17 +4,19 @@
     <title>Speed Tracker</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
+<body class="tracker-page">
 
 <a href="/dashboard" class="back-btn">⬅ Back</a>
 
-<div class="dashboard-container">
+<div class="watch-container">
     <h1>🏃 Speed Tracker</h1>
 
-    <div class="monitor-box">
-        <h2>12 km/h</h2>
-        <marquee>🏃 Running... Stay Healthy 🏃</marquee>
+    <div class="circle-box">
+        <h2>12</h2>
+        <p>KM/H</p>
     </div>
+
+    <marquee>🏃 Running... Calories Burned: 220 🔥 Steps: 5400</marquee>
 </div>
 
 </body>

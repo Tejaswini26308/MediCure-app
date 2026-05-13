@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pulse Tracker</title>
+    <title>Pulse Monitor</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
+<body class="tracker-page">
 
 <a href="/dashboard" class="back-btn">⬅ Back</a>
 
-<div class="dashboard-container">
+<div class="watch-container">
     <h1>💓 Pulse Monitor</h1>
 
-    <div class="monitor-box">
-        <h2>Normal Pulse</h2>
-        <p>Pulse Rate: 82</p>
+    <div class="circle-box">
+        <h2>82</h2>
+        <p>Pulse</p>
+    </div>
+
+    <div class="graph-box">
+        <div class="bar" style="height:80px;"></div>
+        <div class="bar" style="height:120px;"></div>
+        <div class="bar" style="height:60px;"></div>
+        <div class="bar" style="height:140px;"></div>
     </div>
 </div>
 
