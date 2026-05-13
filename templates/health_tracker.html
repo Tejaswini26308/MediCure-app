@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<a href="/dashboard" class="back-btn">⬅ Back</a>
+
+<div class="dashboard-container">
+    <h1>Health Tracker</h1>
+    <p>Check your health stats manually</p>
+
+    <div class="location-section">
+
+        <h2>Heart Rate Checker</h2>
+        <input type="number" id="heartRate" placeholder="Enter BPM">
+        <button onclick="checkHeartRate()">Check</button>
+
+        <h2>Pulse Rate Checker</h2>
+        <input type="number" id="pulseRate" placeholder="Enter Pulse Rate">
+        <button onclick="checkPulse()">Check</button>
+
+        <h2>Walking Speed Calculator</h2>
+        <input type="number" id="distance" placeholder="Distance (km)">
+        <input type="number" id="time" placeholder="Time (hours)">
+        <button onclick="calculateSpeed()">Calculate</button>
+
+        <div id="result" style="margin-top:20px;"></div>
+
+    </div>
+</div>
+
+<script>
+function checkHeartRate(){
+    let bpm = document.getElementById("heartRate").value;
+    let result = document.getElementById("result");
+
+    if(bpm < 60){
+        result.innerHTML = "Low Heart Rate";
+    }
+    else if(bpm <= 100){
+        result.innerHTML = "Normal Heart Rate";
+    }
+    else{
+        result.innerHTML = "High Heart Rate";
+    }
+}
+
+function checkPulse(){
+    let pulse = document.getElementById("pulseRate").value;
+    let result = document.getElementById("result");
+
+    if(pulse < 60){
+        result.innerHTML = "Low Pulse Rate";
+    }
+    else if(pulse <= 100){
+        result.innerHTML = "Normal Pulse Rate";
+    }
+    else{
+        result.innerHTML = "High Pulse Rate";
+    }
+}
+
+function calculateSpeed(){
+    let distance = document.getElementById("distance").value;
+    let time = document.getElementById("time").value;
+    let result = document.getElementById("result");
+
+    let speed = distance / time;
+
+    result.innerHTML = "Your Speed: " + speed + " km/h";
+}
+</script>
+
+</body>
+</html>

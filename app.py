@@ -338,5 +338,9 @@ def authorize():
 
     return redirect('/dashboard')
 
+@app.route('/health-tracker')
+def health_tracker():
+    return render_template('health_tracker.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
