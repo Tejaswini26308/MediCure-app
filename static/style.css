@@ -227,3 +227,36 @@ footer{
         transform:translateY(0px);
     }
 }
+
+/* LIGHT MODE */
+.light-mode{
+    background: #f8fafc;
+    color: #111827;
+}
+
+/* navbar light */
+.light-mode nav{
+    background: white;
+    color: black;
+}
+
+/* cards light */
+.light-mode .card{
+    background: white;
+    color: black;
+    border: 1px solid #ddd;
+}
+
+/* footer light */
+.light-mode footer{
+    background: #e5e7eb;
+    color: black;
+}
+
+/* forms light */
+.light-mode input,
+.light-mode select{
+    background:white;
+    color:black;
+    border:1px solid #ccc;
+}

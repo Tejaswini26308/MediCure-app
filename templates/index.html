@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medicare</title>
+    <title>MediCure AI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -18,14 +18,26 @@
         <li><a href="/contact">Contact</a></li>
     </ul>
 
-    <a href="/dashboard">
-        <button>Sign In</button>
-    </a>
+    <div style="display:flex; gap:10px; align-items:center;">
+
+        <button onclick="toggleTheme()" id="theme-btn">
+            🌙
+        </button>
+
+        <a href="/dashboard">
+            <button>Sign In</button>
+        </a>
+
+    </div>
 </nav>
 
 <section class="hero">
     <h2>Smart Healthcare For Humans & Pets</h2>
-<p>Book appointments, upload reports, manage pet care and chat with AI healthcare assistant.</p>
+
+    <p>
+        Book appointments, upload reports, manage pet care,
+        and chat with AI healthcare assistant.
+    </p>
 
     <a href="/login">
         <button>Get Started</button>
@@ -59,8 +71,23 @@
 </section>
 
 <footer>
-    <p>© 2026 Medicure | Powered by team</p>
+    <p>© 2026 MediCure AI | Powered by Team</p>
 </footer>
+
+<script>
+function toggleTheme() {
+    document.body.classList.toggle("light-mode");
+
+    const btn = document.getElementById("theme-btn");
+
+    if(document.body.classList.contains("light-mode")){
+        btn.innerHTML = "☀️";
+    } 
+    else {
+        btn.innerHTML = "🌙";
+    }
+}
+</script>
 
 </body>
 </html>
