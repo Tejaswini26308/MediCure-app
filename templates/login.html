@@ -33,8 +33,7 @@
         <h1>Welcome Back!</h1>
         <p>Login to continue your healthcare journey</p>
 
-        <form action="/dashboard">
-
+        <form action="/login" method="POST">
             <input type="email" placeholder="Enter your email" required>
 
             <input type="password" placeholder="Enter your password" required>
@@ -51,7 +50,9 @@
 
             <button type="submit">Login</button>
 
-            <button type="button">Login with Google</button>
+            <a href="/google-login">
+    <button type="button">Login with Google</button>
+</a>
 
             <p class="signup-text">
                 Don’t have an account? <span>Sign Up</span>

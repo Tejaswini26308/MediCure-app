@@ -5,14 +5,14 @@ import sqlite3
 import os
 
 app = Flask(__name__)
-app.secret_key = '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'  # Replace with a real secret key
+app.secret_key = 'medicure_secret_key_123'  # Replace with a real secret key
 
 oauth = OAuth(app)
 
 google = oauth.register(
     name='google',
-    client_id='733850428574-eu546hvn2f987tnvj3roil1ebtlcj422.apps.googleusercontent.com',
-    client_secret='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',
+    client_id='YOUR_CLIENT_ID', 
+    client_secret='YOUR_CLIENT_SECRET',
     server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
     client_kwargs={
         'scope': 'openid email profile'
@@ -318,6 +318,24 @@ def insurance():
 @app.route('/pharmacy')
 def pharmacy():
     return render_template('pharmacy.html')
+
+@app.route('/google-login')
+def google_login():
+    return google.authorize_redirect(
+        redirect_uri='http://localhost:5000/authorize'
+    )
+
+@app.route('/authorize')
+def authorize():
+    token = google.authorize_access_token()
+
+    user_info = google.get(
+        'https://www.googleapis.com/oauth2/v1/userinfo'
+    ).json()
+
+    session['user'] = user_info
+
+    return redirect('/dashboard')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
