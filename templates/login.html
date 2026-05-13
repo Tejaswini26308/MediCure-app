@@ -1,44 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Login - MediCure AI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-<button onclick="toggleTheme()" id="theme-btn">
-    🌙
-</button>
-<div class="login-container">
-    <h1>Welcome Back to MediCure AI</h1>
-<p>Secure healthcare login portal</p>
 
-    <form>
-        <input type="text" placeholder="Enter Email"><br><br>
-        <input type="password" placeholder="Enter Password"><br><br>
-        <a href="/forgot-password" style="display:block; margin:10px 0; color:#1e3a8a;">
-    Forgot Password?
-</a>
+<button onclick="toggleTheme()" id="theme-btn">🌙</button>
 
-        <select>
-            <option>Human Healthcare</option>
-            <option>Veterinary User</option>
-            <option>Hospital Admin</option>
-        </select><br><br>
+<div class="login-page">
 
-        <a href="/dashboard">
-    <button type="button">Login</button>
-    <button>Login with Google</button>
-</a>
-    </form>
+    <!-- LEFT SIDE -->
+    <div class="login-left">
+        <h1>MediCure AI</h1>
+        <p>Your Smart Healthcare Companion</p>
+
+        <ul>
+            <li>✔ AI Powered Health Support</li>
+            <li>✔ Human Healthcare Services</li>
+            <li>✔ Veterinary Care</li>
+            <li>✔ Insurance Support</li>
+            <li>✔ Pharmacy Information</li>
+        </ul>
+
+        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528"
+             alt="Healthcare Image">
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="login-right">
+
+        <h1>Welcome Back!</h1>
+        <p>Login to continue your healthcare journey</p>
+
+        <form action="/dashboard">
+
+            <input type="email" placeholder="Enter your email" required>
+
+            <input type="password" placeholder="Enter your password" required>
+
+            <a href="/forgot-password" class="forgot-link">
+                Forgot Password?
+            </a>
+
+            <select required>
+                <option>Human Healthcare</option>
+                <option>Veterinary User</option>
+                <option>Hospital Admin</option>
+            </select>
+
+            <button type="submit">Login</button>
+
+            <button type="button">Login with Google</button>
+
+            <p class="signup-text">
+                Don’t have an account? <span>Sign Up</span>
+            </p>
+
+        </form>
+    </div>
+
 </div>
 
-<script>
- document.querySelector('form').addEventListener('submit', function(e) {
-     e.preventDefault();
-     alert('Login functionality is not implemented in this demo.');
- });
-</script>
-
 <script src="{{ url_for('static', filename='theme.js') }}"></script>
+
 </body>
 </html>
