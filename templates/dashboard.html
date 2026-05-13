@@ -158,21 +158,31 @@ function findHospitals() {
 
     let output = "<h3>Nearby Hospitals:</h3>";
 
-hospitalList.forEach(function(hospital){
-    output += `
-        <div style="
-            background:#1e293b;
-            padding:15px;
-            margin:10px;
-            border-radius:15px;
-            color:white;
-        ">
-            <h4>${hospital}</h4>
-            <p>Available: 24/7 Emergency</p>
-            <p>Contact: +91 9876543210</p>
-        </div>
-    `;
-});
+    hospitalList.forEach(function(hospital){
+
+        let mapLink = `https://www.google.com/maps/search/${hospital}+${city}`;
+
+        output += `
+            <div style="
+                background:#1e293b;
+                padding:15px;
+                margin:10px;
+                border-radius:15px;
+                color:white;
+            ">
+                <h4>${hospital}</h4>
+                <p>24/7 Emergency Available</p>
+                <p>Ambulance Support Available</p>
+
+                <a href="${mapLink}" target="_blank">
+                    <button style="margin-top:10px;">
+                        Open in Google Maps
+                    </button>
+                </a>
+            </div>
+        `;
+    });
+
     result.innerHTML = output;
 }
 </script>
