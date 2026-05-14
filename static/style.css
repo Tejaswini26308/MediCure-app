@@ -479,3 +479,58 @@ footer{
     border-radius:20px;
     width:150px;
 }
+/* VET PAGE */
+
+.vet-page{
+    background:linear-gradient(135deg,#0f172a,#0f766e,#1e3a8a);
+    min-height:100vh;
+}
+
+.vet-hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    max-width:1100px;
+    background:rgba(255,255,255,0.1);
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:30px;
+}
+
+.vet-left{
+    width:60%;
+}
+
+.vet-left h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.vet-left p{
+    font-size:18px;
+}
+
+.vet-right img{
+    width:250px;
+    animation: floatPet 3s infinite ease-in-out;
+}
+
+@keyframes floatPet{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0px);}
+}
+
+/* Emergency Card */
+
+.pet-emergency{
+    background:red;
+    width:100%;
+    max-width:900px;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    margin-bottom:30px;
+    animation:pulseSOS 1.5s infinite;
+}

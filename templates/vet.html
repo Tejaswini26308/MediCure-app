@@ -3,45 +3,102 @@
 <head>
     <title>Veterinary Care</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
+<body class="vet-page">
 
-    <a href="/dashboard" class="back-btn">← Back</a>
+<a href="/dashboard" class="back-btn">⬅ Back</a>
 
 <div class="dashboard-container">
-    <h1>Veterinary Care Services</h1>
 
-    <a href="/pet_symptom">
-<div class="card">
-    <h2>Pet Symptom Checker</h2>
-    <p>Check pet health issues</p>
+    <!-- Hero Section -->
+    <div class="vet-hero">
+        <div class="vet-left">
+            <h1>🐾 Smart Pet Healthcare</h1>
+            <p>
+                Caring for your pets with appointments, vaccination tracking,
+                emergency support and medical records.
+            </p>
+        </div>
+
+        <div class="vet-right">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png">
+        </div>
+    </div>
+
+    <!-- Emergency Alert -->
+    <div class="pet-emergency">
+        <h2>🚨 Pet Emergency?</h2>
+        <p>Contact nearest veterinary hospital immediately</p>
+        <button onclick="alert('Calling nearest veterinary support...')">
+            Emergency Help
+        </button>
+    </div>
+
+    <!-- Pet Categories -->
+    <h2 style="margin-top:30px;">Choose Your Pet</h2>
+
+    <div class="quick-features">
+
+        <div class="quick-card">
+            <i class="fa-solid fa-dog"></i>
+            <h3>Dog Care</h3>
+        </div>
+
+        <div class="quick-card">
+            <i class="fa-solid fa-cat"></i>
+            <h3>Cat Care</h3>
+        </div>
+
+        <div class="quick-card">
+            <i class="fa-solid fa-dove"></i>
+            <h3>Bird Care</h3>
+        </div>
+
+        <div class="quick-card">
+            <i class="fa-solid fa-paw"></i>
+            <h3>Other Pets</h3>
+        </div>
+
+    </div>
+
+    <!-- Main Vet Services -->
+    <h2 style="margin-top:40px;">Pet Services</h2>
+
+    <div class="card-container">
+
+        <a href="/pet_symptom">
+            <div class="card">
+                <h2>Pet Symptom Checker</h2>
+                <p>Check health issues instantly</p>
+            </div>
+        </a>
+
+        <a href="/vet_appointment">
+            <div class="card">
+                <h2>Vet Appointment</h2>
+                <p>Book pet doctor appointments</p>
+            </div>
+        </a>
+
+        <a href="/vaccination">
+            <div class="card">
+                <h2>Vaccination Tracker</h2>
+                <p>Track upcoming vaccines</p>
+            </div>
+        </a>
+
+        <a href="/pet_records">
+            <div class="card">
+                <h2>Medical Records</h2>
+                <p>Store pet history safely</p>
+            </div>
+        </a>
+
+    </div>
+
 </div>
-</a>
-
-    <a href="/vet_appointment">
-<div class="card">
-    <h2>Vet Appointment Booking</h2>
-    <p>Book appointments for pets</p>
-</div>
-</a>
-
-   <a href="/vaccination">
-<div class="card">
-    <h2>Vaccination Reminder</h2>
-    <p>Track pet vaccinations</p>
-</div>
-</a>
-
-   <a href="/pet_records">
-<div class="card">
-    <h2>Pet Medical Records</h2>
-    <p>Store pet reports and history</p>
-</div>
-</a>
-
-</div>
-
-
 
 </body>
 </html>
