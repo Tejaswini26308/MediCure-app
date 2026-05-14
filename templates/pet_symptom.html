@@ -4,27 +4,36 @@
     <title>Pet Symptom Checker</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    
 
 <a href="/vet" class="back-btn">← Back</a>
 
 <div class="dashboard-container">
-    <h1>Pet Symptom Checker</h1>
 
-    <form method="POST">
+    <div style="max-width:450px; margin:auto; text-align:center;">
 
-        <input type="text"
-               name="symptom"
-               placeholder="Enter pet symptoms"
-               required><br><br>
+        <h1>🐾 Pet Symptom Checker</h1>
+        <p>Enter symptoms to get basic health suggestions</p>
 
-        <button type="submit">Check Symptoms</button>
+        <form method="POST">
 
-    </form>
+            <input type="text"
+                   name="symptom"
+                   placeholder="Enter pet symptoms (e.g., vomiting, fever)"
+                   required
+                   style="width:90%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #ccc;">
+
+            <button type="submit"
+                    style="width:95%; padding:12px; border:none; border-radius:10px; background:#2563eb; color:white;">
+                Check Symptoms
+            </button>
+
+        </form>
+
+    </div>
 
 </div>
-
 
 </body>
 </html>

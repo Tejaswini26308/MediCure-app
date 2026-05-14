@@ -2,61 +2,59 @@
 <html>
 <head>
     <title>MediCure Dashboard</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
 
-<!-- NAVBAR -->
-<nav>
-    <h1>MediCure</h1>
+<body class="dashboard-app">
 
-    <a href="/">
-        <button>Home</button>
-    </a>
+<!-- TOP NAVBAR -->
+<nav class="top-nav">
+    <h1>🏥 MediCure</h1>
+
+    <div class="nav-right">
+        <a href="/"><button>Home</button></a>
+    </div>
 </nav>
 
-<div class="dashboard-container">
+<!-- MAIN CONTAINER -->
+<div class="app-container">
 
-    <h1>Your Health Services</h1>
-    <p>Everything you need in one place</p>
+    <!-- HEADER -->
+    <div class="welcome-box">
+        <h2>Your Health Dashboard</h2>
+        <p>Everything you need in one place</p>
+    </div>
 
-    <!-- QUICK HEALTH FEATURES -->
-    <div class="quick-features">
+    <!-- QUICK HEALTH CARDS -->
+    <div class="quick-grid">
 
-        <!-- Heart Rate -->
-        <a href="/heart-rate">
-            <div class="quick-card">
-                <i class="fa-solid fa-heart-pulse"></i>
-                <h3>Heart Rate</h3>
-                <p>Live heart monitor</p>
-            </div>
+        <a href="/heart-rate" class="quick-card">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h3>Heart Rate</h3>
+            <p>Live monitor</p>
         </a>
 
-        <!-- Pulse -->
-        <a href="/pulse">
-            <div class="quick-card">
-                <i class="fa-solid fa-stethoscope"></i>
-                <h3>Pulse Rate</h3>
-                <p>Track pulse health</p>
-            </div>
+        <a href="/pulse" class="quick-card">
+            <i class="fa-solid fa-stethoscope"></i>
+            <h3>Pulse Rate</h3>
+            <p>Health tracking</p>
         </a>
 
-        <!-- Speed -->
-        <a href="/speed">
-            <div class="quick-card">
-                <i class="fa-solid fa-person-running"></i>
-                <h3>Speed Tracker</h3>
-                <p>Smart activity tracker</p>
-            </div>
+        <a href="/speed" class="quick-card">
+            <i class="fa-solid fa-person-running"></i>
+            <h3>Speed</h3>
+            <p>Activity tracker</p>
         </a>
-
-        
 
     </div>
 
-    <!-- MAIN SERVICES -->
+    <!-- MAIN SERVICE CARDS -->
+    <h2 class="section-title">Services</h2>
+
     <div class="card-container">
 
         <a href="/human">
@@ -79,15 +77,15 @@
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef">
                 <h2>Hospital Admin</h2>
-                <p>Manage hospital records</p>
+                <p>Manage records</p>
             </div>
         </a>
 
         <a href="/insurance">
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85">
-                <h2>Insurance Process</h2>
-                <p>Claims + documentation help</p>
+                <h2>Insurance</h2>
+                <p>Claims support</p>
             </div>
         </a>
 
@@ -102,7 +100,7 @@
     </div>
 
     <!-- HOSPITAL FINDER -->
-    <div class="location-section">
+    <div class="location-box">
 
         <h2>Find Nearby Hospitals</h2>
 
@@ -113,13 +111,16 @@
             <option value="visakhapatnam">Visakhapatnam</option>
         </select>
 
-        <button onclick="findHospitals()">Search Hospitals</button>
+        <button onclick="findHospitals()">Search</button>
 
-        <div id="hospitalResults" style="margin-top:20px;"></div>
+        <div id="hospitalResults"></div>
 
     </div>
 
 </div>
+
+<!-- SOS BUTTON -->
+<div class="sos-btn" onclick="showSOS()">🚨 SOS</div>
 
 <script>
 function findHospitals() {
@@ -127,21 +128,9 @@ function findHospitals() {
     let result = document.getElementById("hospitalResults");
 
     let hospitals = {
-        vijayawada: [
-            "Andhra Hospitals",
-            "Ramesh Hospitals",
-            "Sentini Hospitals"
-        ],
-        hyderabad: [
-            "Apollo Hospitals",
-            "Yashoda Hospitals",
-            "Care Hospitals"
-        ],
-        visakhapatnam: [
-            "KIMS Hospital",
-            "Seven Hills Hospital",
-            "Apollo Vizag"
-        ]
+        vijayawada: ["Andhra Hospitals", "Ramesh Hospitals", "Sentini Hospitals"],
+        hyderabad: ["Apollo Hospitals", "Yashoda Hospitals", "Care Hospitals"],
+        visakhapatnam: ["KIMS Hospital", "Seven Hills Hospital", "Apollo Vizag"]
     };
 
     if(city === ""){
@@ -149,51 +138,30 @@ function findHospitals() {
         return;
     }
 
-    let hospitalList = hospitals[city];
-
     let output = "<h3>Nearby Hospitals:</h3>";
 
-    hospitalList.forEach(function(hospital){
-
-        let mapLink = `https://www.google.com/maps/search/${hospital}+${city}`;
+    hospitals[city].forEach(h => {
+        let mapLink = `https://www.google.com/maps/search/${h}+${city}`;
 
         output += `
-            <div style="
-                background:#1e293b;
-                padding:15px;
-                margin:10px;
-                border-radius:15px;
-                color:white;
-            ">
-                <h4>${hospital}</h4>
-                <p>24/7 Emergency Available</p>
-                <p>Ambulance Support Available</p>
-
-                <a href="${mapLink}" target="_blank">
-                    <button style="margin-top:10px;">
-                        Open in Google Maps
-                    </button>
-                </a>
-            </div>
-        `;
+        <div class="hospital-card">
+            <h4>${h}</h4>
+            <p>24/7 Emergency Available</p>
+            <a href="${mapLink}" target="_blank">
+                <button>Open Maps</button>
+            </a>
+        </div>`;
     });
 
     result.innerHTML = output;
 }
-</script>
-<!-- Emergency SOS Button -->
-<div class="sos-btn" onclick="showSOS()">
-    🚨 SOS
-</div>
 
-<script>
 function showSOS(){
     alert(
-        "Emergency Help:\\n\\n" +
-        "🚑 Ambulance: 108\\n" +
-        "👮 Police: 100\\n" +
-        "🔥 Fire: 101\\n\\n" +
-        "Nearest hospital available via hospital finder."
+        "🚨 Emergency Contacts:\\n\\n" +
+        "Ambulance: 108\\n" +
+        "Police: 100\\n" +
+        "Fire: 101"
     );
 }
 </script>
