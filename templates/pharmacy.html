@@ -7,95 +7,122 @@
 
 <body>
 
-
-
 <a href="/dashboard" class="back-btn">← Back</a>
 
 <div class="dashboard-container">
 
-    <h1>Medicine Information Center</h1>
+    <!-- HEADER -->
+    <div style="text-align:center; max-width:800px; margin:auto;">
 
-    <p style="max-width:900px; line-height:1.8; margin-bottom:30px;">
-        MediCure Pharmacy helps users understand commonly used medicines,
-        their purpose and safety precautions.
-    </p>
+        <h1>💊 Medicine Information Center</h1>
 
+        <p style="color:gray; line-height:1.7;">
+            Get safe, simple information about common medicines, their uses,
+            and basic precautions. Always consult a doctor before use.
+        </p>
+
+    </div>
+
+    <!-- CATEGORY CARDS -->
     <div class="card-container">
 
         <div class="card">
             <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88">
-            <h2>Pain Relief</h2>
+            <h2>💊 Pain Relief</h2>
             <p>Paracetamol, Ibuprofen</p>
         </div>
 
         <div class="card">
             <img src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de">
-            <h2>Cold & Allergy</h2>
+            <h2>🤧 Cold & Allergy</h2>
             <p>Cetirizine, Loratadine</p>
         </div>
 
         <div class="card">
             <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67">
-            <h2>Digestive Medicines</h2>
+            <h2>🧪 Digestive Care</h2>
             <p>ORS, Pantoprazole, Omeprazole</p>
         </div>
 
     </div>
 
-    <br><br>
+    <!-- TABLE SECTION -->
+    <div style="
+        max-width:800px;
+        margin:40px auto;
+        background:white;
+        padding:20px;
+        border-radius:15px;
+        box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    ">
 
-    <h2>Common Medicine Table</h2>
+        <h2 style="text-align:center;">📋 Common Medicines</h2>
 
-    <table border="1" cellpadding="12">
-        <tr>
-            <th>Medicine</th>
-            <th>Used For</th>
-        </tr>
+        <table style="
+            width:100%;
+            margin-top:20px;
+            border-collapse:collapse;
+        ">
 
-        <tr>
-            <td>Paracetamol</td>
-            <td>Fever & Pain Relief</td>
-        </tr>
+            <tr style="background:#f1f5f9;">
+                <th style="padding:12px;">Medicine</th>
+                <th>Used For</th>
+            </tr>
 
-        <tr>
-            <td>Ibuprofen</td>
-            <td>Inflammation & Pain</td>
-        </tr>
+            <tr>
+                <td style="padding:10px;">Paracetamol</td>
+                <td>Fever & Pain Relief</td>
+            </tr>
 
-        <tr>
-            <td>Cetirizine</td>
-            <td>Cold & Allergy</td>
-        </tr>
+            <tr>
+                <td style="padding:10px;">Ibuprofen</td>
+                <td>Inflammation & Pain</td>
+            </tr>
 
-        <tr>
-            <td>ORS</td>
-            <td>Dehydration</td>
-        </tr>
+            <tr>
+                <td style="padding:10px;">Cetirizine</td>
+                <td>Cold & Allergy</td>
+            </tr>
 
-        <tr>
-            <td>Omeprazole</td>
-            <td>Acidity</td>
-        </tr>
+            <tr>
+                <td style="padding:10px;">ORS</td>
+                <td>Dehydration</td>
+            </tr>
 
-        <tr>
-            <td>Loratadine</td>
-            <td>Allergy Relief</td>
-        </tr>
-    </table>
+            <tr>
+                <td style="padding:10px;">Omeprazole</td>
+                <td>Acidity</td>
+            </tr>
 
-    <br><br>
+            <tr>
+                <td style="padding:10px;">Loratadine</td>
+                <td>Allergy Relief</td>
+            </tr>
 
-    <h2>Medicine Safety Tips</h2>
+        </table>
 
-    <p style="max-width:900px; line-height:1.8;">
-        ✔ Check expiry date <br>
-        ✔ Avoid overdose <br>
+    </div>
+
+    <!-- SAFETY SECTION -->
+    <div style="
+        max-width:800px;
+        margin:auto;
+        text-align:center;
+        padding:20px;
+        color:gray;
+        line-height:1.8;
+    ">
+
+        <h2>⚠️ Medicine Safety Tips</h2>
+
+        ✔ Always check expiry date <br>
+        ✔ Avoid self-overdose <br>
         ✔ Consult doctor if symptoms continue <br>
-        ✔ Don’t mix medicines without advice
-    </p>
+        ✔ Never mix medicines without advice
+
+    </div>
 
 </div>
-
 
 </body>
 </html>
