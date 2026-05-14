@@ -1,15 +1,18 @@
-import os
-from flask import Flask, render_template, redirect, url_for, session
 from authlib.integrations.flask_client import OAuth
+from flask import Flask, render_template, request, redirect, session, url_for
+import sqlite3
+import os
 
 app = Flask(__name__)
-app.secret_key = os.getenv("SECRET_KEY")
+
+# Secret key from environment variable
+app.secret_key = os.environ.get("SECRET_KEY")
 
 oauth = OAuth(app)
 
 google = oauth.register(
     name='google',
-    client_id=os.getenv("GOOGLE_CLIENT_ID"),
+   client_id=os.getenv("GOOGLE_CLIENT_ID"),
     client_secret=os.getenv("GOOGLE_CLIENT_SECRET"),
     server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
     client_kwargs={
@@ -318,10 +321,10 @@ def pharmacy():
     return render_template('pharmacy.html')
 
 @app.route('/google-login')
-def google_login():
-    return google.authorize_redirect(
-        redirect_uri='http://localhost:5000/authorize'
-    )
+def google_login(): 
+    redirect_uri = url_for('authorize', _external=True)
+    return google.authorize_redirect(redirect_uri)
+
 
 @app.route('/authorize')
 def authorize():
