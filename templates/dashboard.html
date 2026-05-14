@@ -28,7 +28,7 @@
         <p>Human + Pet Care + AI Support + Emergency System</p>
     </div>
 
-    <!-- HEALTH TRACKERS -->
+    <!-- HEALTH TRACKING -->
     <h2 class="section-title">Health Tracking</h2>
 
     <div class="quick-grid">
@@ -50,44 +50,54 @@
 
     </div>
 
-    <!-- MAIN SERVICES -->
+    <!-- SERVICES -->
     <h2 class="section-title">Services</h2>
 
     <div class="card-container">
 
-        <a href="/human"><div class="card">
-            <i class="fa-solid fa-user-doctor"></i>
-            <h2>Human Care</h2>
-            <p>Appointments • Reports</p>
-        </div></a>
+        <a href="/human">
+            <div class="card">
+                <i class="fa-solid fa-user-doctor"></i>
+                <h2>Human Care</h2>
+                <p>Appointments • Reports</p>
+            </div>
+        </a>
 
-        <a href="/vet"><div class="card">
-            <i class="fa-solid fa-paw"></i>
-            <h2>Veterinary Care</h2>
-            <p>Pet health system</p>
-        </div></a>
+        <a href="/vet">
+            <div class="card">
+                <i class="fa-solid fa-paw"></i>
+                <h2>Veterinary Care</h2>
+                <p>Pet health system</p>
+            </div>
+        </a>
 
-        <a href="/admin"><div class="card">
-            <i class="fa-solid fa-hospital"></i>
-            <h2>Admin Panel</h2>
-            <p>Hospital management</p>
-        </div></a>
+        <a href="/admin">
+            <div class="card">
+                <i class="fa-solid fa-hospital"></i>
+                <h2>Admin Panel</h2>
+                <p>Hospital management</p>
+            </div>
+        </a>
 
-        <a href="/insurance"><div class="card">
-            <i class="fa-solid fa-shield-heart"></i>
-            <h2>Insurance</h2>
-            <p>Claims & policies</p>
-        </div></a>
+        <a href="/insurance">
+            <div class="card">
+                <i class="fa-solid fa-shield-heart"></i>
+                <h2>Insurance</h2>
+                <p>Claims & policies</p>
+            </div>
+        </a>
 
-        <a href="/pharmacy"><div class="card">
-            <i class="fa-solid fa-pills"></i>
-            <h2>Pharmacy</h2>
-            <p>Medicine info</p>
-        </div></a>
+        <a href="/pharmacy">
+            <div class="card">
+                <i class="fa-solid fa-pills"></i>
+                <h2>Pharmacy</h2>
+                <p>Medicine info</p>
+            </div>
+        </a>
 
     </div>
 
-    <!-- 🔥 COMBINED HOSPITAL FINDER -->
+    <!-- HOSPITAL FINDER -->
     <div class="location-box">
 
         <h2>Find Nearby Hospitals (Human + Pet)</h2>
@@ -107,19 +117,19 @@
 
 </div>
 
-<!-- 🤖 CHATBOT FLOAT (BOTTOM LEFT) -->
-<div class="chatbot-fab" style="
+<!-- 🤖 AI CHATBOT FLOAT (LEFT) -->
+<div style="
     position:fixed;
     bottom:20px;
     left:20px;
+    width:60px;
+    height:60px;
     background:#2563eb;
-    width:55px;
-    height:55px;
     border-radius:50%;
     display:flex;
     justify-content:center;
     align-items:center;
-    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
     z-index:999;
 ">
     <a href="/chatbot" style="color:white;font-size:22px;">
@@ -127,21 +137,21 @@
     </a>
 </div>
 
-<!-- 🚨 SOS FLOAT (BOTTOM RIGHT) -->
+<!-- 🚨 SOS FLOAT (RIGHT) -->
 <div onclick="showSOS()" style="
     position:fixed;
     bottom:20px;
     right:20px;
+    width:60px;
+    height:60px;
     background:red;
-    color:white;
-    width:55px;
-    height:55px;
     border-radius:50%;
     display:flex;
     justify-content:center;
     align-items:center;
+    color:white;
     font-size:20px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
     cursor:pointer;
     z-index:999;
 ">
@@ -158,19 +168,16 @@ function findHospitals() {
         vijayawada: [
             "Andhra Hospitals",
             "Ramesh Hospitals",
-            "Sentini Hospitals",
             "Pet Care Clinic Vijayawada"
         ],
         hyderabad: [
             "Apollo Hospitals",
             "Yashoda Hospitals",
-            "Care Hospitals",
             "BlueCross Pet Hospital"
         ],
         visakhapatnam: [
             "KIMS Hospital",
             "Seven Hills Hospital",
-            "Apollo Vizag",
             "Vizag Pet Clinic"
         ]
     };
@@ -187,7 +194,7 @@ function findHospitals() {
         let mapLink = `https://www.google.com/maps/search/${h}+${city}`;
 
         output += `
-        <div class="hospital-card" style="
+        <div style="
             background:#111827;
             color:white;
             padding:15px;
@@ -206,7 +213,7 @@ function findHospitals() {
 }
 
 function showSOS(){
-    alert("🚨 Emergency Numbers:\n108 Ambulance\n100 Police\n101 Fire");
+    alert("🚨 Emergency:\nAmbulance: 108\nPolice: 100\nFire: 101");
 }
 </script>
 
