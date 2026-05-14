@@ -1581,28 +1581,32 @@ footer{
 
 /* ECG */
 
-.ecg-line{
+.ecg-monitor{
     width:100%;
-    height:120px;
-    margin-top:20px;
+    height:180px;
+    margin-top:25px;
     overflow:hidden;
     border-radius:20px;
-    background:#0f172a;
+    background:rgba(255,255,255,0.4);
+    backdrop-filter:blur(10px);
+    position:relative;
 }
 
-.line{
+/* continuous ECG movement */
+.ecg-svg{
     width:200%;
     height:100%;
-    background:url('https://i.imgur.com/9Qx6K8v.png') repeat-x;
-    background-size:contain;
-    animation:ecgMove 2s linear infinite;
+    animation:ecgFlow 4s linear infinite;
 }
 
-@keyframes ecgMove{
-    from{transform:translateX(0);}
-    to{transform:translateX(-50%);}
+@keyframes ecgFlow{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
 }
-
 .mini-stats{
     display:flex;
     justify-content:space-between;
