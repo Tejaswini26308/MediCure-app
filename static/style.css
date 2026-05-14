@@ -635,3 +635,37 @@ footer{
 .card p {
     color: #666;
 }
+.quick-grid {
+    display: flex;
+    justify-content: center;   /* center align */
+    gap: 25px;
+    flex-wrap: wrap;           /* mobile lo wrap avvadaniki */
+    margin-top: 20px;
+}
+
+.quick-card {
+    width: 180px;
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+}
+
+.quick-card i {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.quick-card:hover {
+    transform: translateY(-5px);
+    background: #1f2937;
+}
