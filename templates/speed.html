@@ -21,51 +21,70 @@
 <div class="run-dashboard">
 
     <div class="run-header">
-        <h2>🏃 Live Running Tracker</h2>
-        <p>Real-time performance analytics</p>
+        <h2>🏃 Pro Fitness Tracker</h2>
+        <p>Live Motion + Performance Analytics</p>
     </div>
 
-    <!-- RUN ANIMATION -->
+    <!-- RUN TRACK -->
     <div class="run-track">
+        <div class="track-glow"></div>
         <div class="runner">🏃‍♂️</div>
-        <div class="track-line"></div>
     </div>
 
     <!-- STATS -->
     <div class="run-stats">
 
         <div class="stat">
-            <h3 id="speed">12.5</h3>
-            <p>Speed (km/h)</p>
+            <h3><span class="count" data-target="14">0</span> km/h</h3>
+            <p>Speed</p>
         </div>
 
         <div class="stat">
-            <h3 id="time">00:45</h3>
+            <h3><span class="count" data-target="32">0</span> min</h3>
             <p>Time</p>
         </div>
 
         <div class="stat">
-            <h3 id="distance">1.2</h3>
-            <p>Distance (km)</p>
+            <h3><span class="count" data-target="5.6">0</span> km</h3>
+            <p>Distance</p>
         </div>
 
         <div class="stat">
-            <h3 id="steps">1200</h3>
+            <h3><span class="count" data-target="6420">0</span></h3>
             <p>Steps</p>
         </div>
 
     </div>
 
-    <!-- GRAPH -->
-    <div class="graph">
-        <div class="bar b1"></div>
-        <div class="bar b2"></div>
-        <div class="bar b3"></div>
-        <div class="bar b4"></div>
-        <div class="bar b5"></div>
+    <!-- PULSE GRAPH -->
+    <div class="pulse-graph">
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
     </div>
 
 </div>
+<script>
+function animateCounters(){
+    let counters = document.querySelectorAll(".count");
 
-</body>
-</html>
+    counters.forEach(counter => {
+        let target = +counter.getAttribute("data-target");
+        let current = 0;
+
+        let step = target / 100;
+
+        let update = setInterval(() => {
+            current += step;
+
+            if(current >= target){
+                current = target;
+                clearInterval(update);
+            }
+
+            counter.innerText = Math.floor(current);
+        }, 20);
+    });
+}
+
+window.onload = animateCounters;
+</script>

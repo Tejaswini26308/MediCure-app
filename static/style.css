@@ -784,3 +784,122 @@ footer{
     from{transform:scaleY(0.8);}
     to{transform:scaleY(1.1);}
 }
+.run-dashboard{
+    margin-top:40px;
+    padding:35px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.75);
+    backdrop-filter: blur(15px);
+    box-shadow:0 12px 35px rgba(0,0,0,0.12);
+}
+
+/* HEADER */
+.run-header h2{
+    font-size:30px;
+    color:#0f172a;
+}
+
+.run-header p{
+    color:#555;
+    margin-bottom:25px;
+}
+
+/* TRACK */
+.run-track{
+    position:relative;
+    height:90px;
+    border-radius:20px;
+    overflow:hidden;
+    background:linear-gradient(90deg,#dbeafe,#ecfeff);
+    margin-bottom:25px;
+}
+
+/* glowing road */
+.track-glow{
+    position:absolute;
+    bottom:15px;
+    width:100%;
+    height:6px;
+    background:linear-gradient(90deg,#00b4d8,#00c896);
+    filter:blur(2px);
+    animation: glowMove 1.2s infinite alternate;
+}
+
+@keyframes glowMove{
+    from{transform:translateX(-10px);}
+    to{transform:translateX(10px);}
+}
+
+/* runner */
+.runner{
+    position:absolute;
+    font-size:42px;
+    top:20px;
+    animation: runSmooth 3.5s linear infinite;
+}
+
+@keyframes runSmooth{
+    0%{left:0;}
+    100%{left:92%;}
+}
+
+/* STATS */
+.run-stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+    margin-top:15px;
+}
+
+.stat{
+    background:rgba(17,24,39,0.95);
+    color:white;
+    padding:22px;
+    border-radius:18px;
+    text-align:center;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.stat:hover{
+    transform:translateY(-6px) scale(1.02);
+    background:#1f2937;
+}
+
+.stat h3{
+    font-size:26px;
+    color:#00e5ff;
+}
+
+/* PULSE GRAPH (PRO STYLE) */
+.pulse-graph{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:6px;
+    margin-top:30px;
+    height:90px;
+}
+
+.pulse-graph div{
+    width:8px;
+    background:linear-gradient(#00b4d8,#00c896);
+    border-radius:10px;
+    animation:pulseAnim 0.9s infinite ease-in-out;
+}
+
+.pulse-graph div:nth-child(1){height:20px;}
+.pulse-graph div:nth-child(2){height:60px;}
+.pulse-graph div:nth-child(3){height:40px;}
+.pulse-graph div:nth-child(4){height:80px;}
+.pulse-graph div:nth-child(5){height:30px;}
+.pulse-graph div:nth-child(6){height:70px;}
+.pulse-graph div:nth-child(7){height:50px;}
+.pulse-graph div:nth-child(8){height:90px;}
+.pulse-graph div:nth-child(9){height:35px;}
+.pulse-graph div:nth-child(10){height:65px;}
+
+@keyframes pulseAnim{
+    0%{transform:scaleY(0.7); opacity:0.6;}
+    100%{transform:scaleY(1.1); opacity:1;}
+}
