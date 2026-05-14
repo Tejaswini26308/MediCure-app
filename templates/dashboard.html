@@ -98,14 +98,15 @@ function showSOS(){
     alert("Emergency Numbers:\nAmbulance:108\nPolice:100");
 }
 
-<script>
+
     
 function findHospitals() {
     let city = document.getElementById("citySelect").value;
     let result = document.getElementById("hospitalResults");
 
     let hospitals = {
-        vijayawada: [
+    vijayawada: 
+        [
             {
                 name: "Andhra Hospital",
                 map: "https://www.google.com/maps/search/Andhra+Hospital+Vijayawada"
@@ -120,7 +121,8 @@ function findHospitals() {
             }
         ],
 
-        hyderabad: [
+    hyderabad: 
+        [
             {
                 name: "Apollo Hospital",
                 map: "https://www.google.com/maps/search/Apollo+Hospital+Hyderabad"
@@ -135,7 +137,8 @@ function findHospitals() {
             }
         ],
 
-        visakhapatnam: [
+    visakhapatnam: 
+        [
             {
                 name: "KIMS Hospital",
                 map: "https://www.google.com/maps/search/KIMS+Hospital+Vizag"
