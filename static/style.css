@@ -637,19 +637,20 @@ footer{
 }
 .quick-grid {
     display: flex;
-    justify-content: center;   /* center align */
-    gap: 25px;
-    flex-wrap: wrap;           /* mobile lo wrap avvadaniki */
-    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 25px;
 }
 
 .quick-card {
-    width: 180px;
+    width: 190px;
     background: #111827;
     color: white;
     text-align: center;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 25px;
+    border-radius: 18px;
     text-decoration: none;
 
     display: flex;
@@ -657,15 +658,20 @@ footer{
     align-items: center;
     justify-content: center;
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .quick-card i {
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 10px;
 }
 
+.quick-card h3 {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
 .quick-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     background: #1f2937;
 }
