@@ -492,10 +492,10 @@ footer{
     align-items:center;
     width:100%;
     max-width:1100px;
-    background:rgba(255,255,255,0.1);
+    background:rgba(108, 189, 221, 0.1);
     padding:30px;
     border-radius:20px;
-    margin-bottom:30px;
+    margin:0 auto 30px auto;
 }
 
 .vet-left{
@@ -522,15 +522,15 @@ footer{
     100%{transform:translateY(0px);}
 }
 
-/* Emergency Card */
+/* EMERGENCY CARD FIX */
 
 .pet-emergency{
-    background:red;
+    background:rgb(252, 23, 23);
     width:100%;
     max-width:900px;
     padding:25px;
     border-radius:20px;
     text-align:center;
-    margin-bottom:30px;
+    margin:0 auto 30px auto;   /* center fix */
     animation:pulseSOS 1.5s infinite;
 }
