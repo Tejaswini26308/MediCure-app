@@ -6,38 +6,51 @@
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body class="vet-page">
 
 <a href="/dashboard" class="back-btn">⬅ Back</a>
 
 <div class="dashboard-container">
 
-    <!-- Hero Section -->
+    <!-- HERO -->
     <div class="vet-hero">
+
         <div class="vet-left">
             <h1>🐾 Smart Pet Healthcare</h1>
             <p>
-                Caring for your pets with appointments, vaccination tracking,
-                emergency support and medical records.
+                Complete pet care system with booking, vaccination tracking,
+                emergency support and medical records in one place.
             </p>
+
+            <div style="margin-top:15px;">
+                <span style="background:#dcfce7; padding:5px 10px; border-radius:20px; font-size:12px;">
+                    🟢 24/7 Active
+                </span>
+                <span style="background:#dbeafe; padding:5px 10px; border-radius:20px; font-size:12px; margin-left:5px;">
+                    🏥 Verified Vets
+                </span>
+            </div>
         </div>
 
         <div class="vet-right">
             <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png">
         </div>
+
     </div>
 
-    <!-- Emergency Alert -->
+    <!-- EMERGENCY -->
     <div class="pet-emergency">
         <h2>🚨 Pet Emergency?</h2>
-        <p>Contact nearest veterinary hospital immediately</p>
+        <p>Instant connect to nearest veterinary hospital</p>
+
         <button onclick="window.location.href='tel:108'">
-    Emergency Help
-</button>
+            📞 Call Emergency
+        </button>
     </div>
 
-    <!-- Pet Categories -->
-    <h2 style="margin-top:30px;">Choose Your Pet</h2>
+    <!-- PET CATEGORIES -->
+    <h2 style="margin-top:30px;">🐾 Pet Categories</h2>
 
     <div class="quick-features">
 
@@ -63,39 +76,48 @@
 
     </div>
 
-    <!-- Main Vet Services -->
-    <h2 style="margin-top:40px;">Pet Services</h2>
+    <!-- SERVICES -->
+    <h2 style="margin-top:40px;">🐶 Pet Services</h2>
 
     <div class="card-container">
 
         <a href="/pet_symptom">
             <div class="card">
-                <h2>Pet Symptom Checker</h2>
-                <p>Check health issues instantly</p>
+                <i class="fa-solid fa-stethoscope"></i>
+                <h2>Symptom Checker</h2>
+                <p>Instant health analysis for pets</p>
             </div>
         </a>
 
         <a href="/vet_appointment">
             <div class="card">
-                <h2>Vet Appointment</h2>
-                <p>Book pet doctor appointments</p>
+                <i class="fa-solid fa-calendar-check"></i>
+                <h2>Book Appointment</h2>
+                <p>Schedule vet consultation easily</p>
             </div>
         </a>
 
         <a href="/vaccination">
             <div class="card">
+                <i class="fa-solid fa-syringe"></i>
                 <h2>Vaccination Tracker</h2>
-                <p>Track upcoming vaccines</p>
+                <p>Never miss vaccine schedule</p>
             </div>
         </a>
 
         <a href="/pet_records">
             <div class="card">
+                <i class="fa-solid fa-folder-open"></i>
                 <h2>Medical Records</h2>
-                <p>Store pet history safely</p>
+                <p>Store pet health history securely</p>
             </div>
         </a>
 
+    </div>
+
+    <!-- FOOTER INFO -->
+    <div style="text-align:center; margin-top:40px; color:gray; font-size:13px;">
+        🐾 Trusted by pet owners for smart healthcare management
     </div>
 
 </div>
