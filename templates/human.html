@@ -5,165 +5,86 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-    <!-- Icons -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #e8f5ff, #f5fbff);
-            margin: 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .back-btn {
-            display: inline-block;
-            margin: 15px;
-            padding: 10px 15px;
-            background: #3498db;
-            color: white;
-            border-radius: 10px;
-        }
-
-        .back-btn:hover {
-            background: #217dbb;
-        }
-
-        .dashboard-container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #1f2d3d;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .hero {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .hero h2 {
-            font-size: 26px;
-            color: #2c3e50;
-        }
-
-        .hero p {
-            color: #555;
-        }
-
-        /* Cards */
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            text-align: center;
-        }
-
-        .card i {
-            font-size: 30px;
-            color: #3498db;
-            margin-bottom: 10px;
-        }
-
-        .card h2 {
-            font-size: 18px;
-            color: #2c3e50;
-        }
-
-        .card p {
-            font-size: 13px;
-            color: #666;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-    </style>
 </head>
 
-<body>
+<body class="human-page">
 
 <a href="/dashboard" class="back-btn">⬅ Back</a>
 
 <div class="dashboard-container">
 
-    <!-- HERO -->
-    <div class="hero">
-        <h2>🏥 Smart Human Healthcare</h2>
-        <p>AI-powered health support for better care & guidance</p>
+    <!-- HERO SECTION -->
+    <div class="human-hero">
+
+        <div class="hero-left">
+            <h1>🏥 Smart Human Healthcare</h1>
+            <p>
+                AI-powered healthcare system for appointments, reports,
+                symptom checking and medical support.
+            </p>
+        </div>
+
+        <div class="hero-right">
+            <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png">
+        </div>
+
     </div>
 
-    <h1>Human Healthcare Services</h1>
-    <p class="subtitle">Choose a service to continue</p>
+    <!-- QUICK STATS -->
+    <div class="health-stats">
 
-    <!-- CARDS -->
+        <div class="stat-card">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h3>Doctors</h3>
+            <p>24/7 Available</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fa-solid fa-hospital"></i>
+            <h3>Hospitals</h3>
+            <p>Nearby Support</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fa-solid fa-file-medical"></i>
+            <h3>Reports</h3>
+            <p>Digital Storage</p>
+        </div>
+
+    </div>
+
+    <!-- SERVICES -->
+    <h2 class="section-title">Human Healthcare Services</h2>
+
     <div class="card-container">
 
         <a href="/symptom">
             <div class="card">
-                <i class="fa-solid fa-stethoscope"></i>
-                <h2>Symptom Checker</h2>
-                <p>Check possible diseases instantly</p>
+                <h2>🧠 Symptom Checker</h2>
+                <p>Check possible diseases based on symptoms</p>
             </div>
         </a>
 
         <a href="/appointment">
             <div class="card">
-                <i class="fa-solid fa-calendar-check"></i>
-                <h2>Appointment Booking</h2>
+                <h2>📅 Appointment Booking</h2>
                 <p>Book doctor appointments easily</p>
             </div>
         </a>
 
         <a href="/report">
             <div class="card">
-                <i class="fa-solid fa-file-medical"></i>
-                <h2>Medical Reports</h2>
-                <p>Upload and manage health reports</p>
-            </div>
-        </a>
-
-        <a href="/chatbot">
-            <div class="card">
-                <i class="fa-solid fa-robot"></i>
-                <h2>AI Chatbot</h2>
-                <p>Ask health-related questions</p>
+                <h2>📄 Medical Reports</h2>
+                <p>Upload and store medical records securely</p>
             </div>
         </a>
 
         <a href="/remedies">
             <div class="card">
-                <i class="fa-solid fa-leaf"></i>
-                <h2>Home Remedies</h2>
-                <p>Get natural treatment suggestions</p>
+                <h2>🌿 Home Remedies</h2>
+                <p>Basic natural health suggestions</p>
             </div>
         </a>
 
