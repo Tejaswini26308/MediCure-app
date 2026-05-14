@@ -4,26 +4,23 @@
     <title>Pulse Monitor</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body class="pulse-page">
 
 <a href="/dashboard" class="back-btn">← Back</a>
 
-<div class="pulse-container">
+<div class="pulse-box">
 
-    <h1>Pulse Monitor</h1>
+    <h1>Live Pulse Analytics</h1>
 
-    <div class="pulse-circle">
+    <div class="pulse-ring">
         <h2>82</h2>
-        <p>BPM</p>
+        <span>BPM</span>
     </div>
 
-    <div class="pulse-bars">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    <div class="pulse-info">
+        <div>Stress: Low</div>
+        <div>Oxygen: 97%</div>
+        <div>Recovery: Good</div>
     </div>
 
 </div>

@@ -4,28 +4,40 @@
     <title>Heart Monitor</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body class="heart-page">
 
 <a href="/dashboard" class="back-btn">← Back</a>
 
-<div class="heart-container">
+<div class="heart-monitor-box">
 
     <img src="{{ url_for('static', filename='heart.png') }}" class="heart-img">
 
-    <div class="heart-box">
+    <div class="heart-details">
         <h1>Live Heart Monitor</h1>
+        <h2>72 BPM</h2>
 
-        <div class="live-bpm">72 BPM</div>
-
-        <div class="ecg-line">
-            <div class="line"></div>
+        <div class="ecg-container">
+            <svg viewBox="0 0 500 100">
+                <polyline
+                    fill="none"
+                    stroke="#00e676"
+                    stroke-width="4"
+                    points="
+                    0,50
+                    50,50
+                    80,20
+                    100,80
+                    130,10
+                    160,50
+                    500,50"
+                />
+            </svg>
         </div>
 
-        <div class="mini-stats">
-            <div>BP: 120/80</div>
-            <div>Oxygen: 98%</div>
-            <div>Status: Normal</div>
+        <div class="heart-stats">
+            <div>BP:120/80</div>
+            <div>Oxygen:98%</div>
+            <div>Status:Normal</div>
         </div>
     </div>
 

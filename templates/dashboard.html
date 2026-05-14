@@ -9,55 +9,46 @@
 
 <body class="dashboard-page">
 
-<!-- NAVBAR -->
-<div class="premium-nav">
-    <h2>🏥 MediCure</h2>
+<div class="top-bar">
+    <h2>MediCure</h2>
 
-    <div class="nav-icons">
+    <div class="top-icons">
         <a href="/chatbot"><i class="fa-solid fa-robot"></i></a>
         <a href="/"><i class="fa-solid fa-house"></i></a>
     </div>
 </div>
 
-<!-- HERO -->
-<div class="premium-hero">
+<div class="hero-banner">
     <div>
-        <h1>Your Health, One Smart App</h1>
-        <p>Book appointments • Find hospitals • Track health • Pet care</p>
+        <h1>Your Digital Healthcare Partner</h1>
+        <p>Appointments • Reports • Pet Care • Pharmacy • Insurance</p>
     </div>
 
-    <div class="hero-icon">
-        <i class="fa-solid fa-heart-pulse"></i>
-    </div>
+    <i class="fa-solid fa-heart-pulse hero-heart"></i>
 </div>
 
-<!-- QUICK ACTIONS -->
-<h2 class="section-title">Health Tracking</h2>
+<h2 class="section-title">Health Monitoring</h2>
 
-<div class="premium-grid">
-
-    <a href="/heart-rate" class="premium-card red">
+<div class="health-grid">
+    <a href="/heart-rate" class="health-card">
         <i class="fa-solid fa-heart-pulse"></i>
         <h3>Heart Monitor</h3>
     </a>
 
-    <a href="/pulse" class="premium-card blue">
+    <a href="/pulse" class="health-card">
         <i class="fa-solid fa-wave-square"></i>
         <h3>Pulse Monitor</h3>
     </a>
 
-    <a href="/speed" class="premium-card green">
-        <i class="fa-solid fa-person-running"></i>
-        <h3>Fitness Speed</h3>
+    <a href="/speed" class="health-card">
+        <i class="fa-solid fa-shoe-prints"></i>
+        <h3>Fitness Tracker</h3>
     </a>
-
 </div>
 
-<!-- SERVICES -->
-<h2 class="section-title">Medical Services</h2>
+<h2 class="section-title">Services</h2>
 
 <div class="service-grid">
-
     <a href="/human" class="service-card">
         <i class="fa-solid fa-user-doctor"></i>
         <p>Human Care</p>
@@ -77,17 +68,15 @@
         <i class="fa-solid fa-pills"></i>
         <p>Pharmacy</p>
     </a>
-
 </div>
 
-<!-- HOSPITAL FINDER -->
 <div class="hospital-box">
-    <h2>Find Nearby Hospitals</h2>
+    <h2>Nearby Hospitals</h2>
 
     <select id="citySelect">
         <option value="">Select City</option>
-        <option value="vijayawada">Vijayawada</option>
         <option value="hyderabad">Hyderabad</option>
+        <option value="vijayawada">Vijayawada</option>
         <option value="visakhapatnam">Visakhapatnam</option>
     </select>
 
@@ -96,32 +85,38 @@
     <div id="hospitalResults"></div>
 </div>
 
-<!-- SOS -->
-<div class="sos-float" onclick="showSOS()">🚨</div>
+<div class="chat-float">
+    <a href="/chatbot">
+        <i class="fa-solid fa-comments"></i>
+    </a>
+</div>
+
+<div class="sos-float" onclick="showSOS()">SOS</div>
 
 <script>
 function showSOS(){
-    alert("Ambulance: 108\nPolice:100\nFire:101");
+    alert("Emergency Numbers:\nAmbulance:108\nPolice:100");
 }
 
-function findHospitals() {
-    let city = document.getElementById("citySelect").value;
-    let result = document.getElementById("hospitalResults");
+function findHospitals(){
+    let city=document.getElementById("citySelect").value;
+    let result=document.getElementById("hospitalResults");
 
-    let hospitals = {
-        vijayawada:["Andhra Hospital","Ramesh Hospital"],
+    let hospitals={
         hyderabad:["Apollo Hospital","Yashoda Hospital"],
-        visakhapatnam:["KIMS Hospital","Seven Hills Hospital"]
+        vijayawada:["Ramesh Hospital","Andhra Hospital"],
+        visakhapatnam:["KIMS Hospital","Seven Hills"]
     };
 
     if(city===""){
-        result.innerHTML="<p>Select city first</p>";
+        result.innerHTML="Select city first";
         return;
     }
 
     let output="";
+
     hospitals[city].forEach(h=>{
-        output += `
+        output+=`
         <div class="hospital-card">
             <h4>${h}</h4>
             <p>24/7 Available</p>
