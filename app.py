@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Secret key from environment variable
-app.secret_key = os.environ.get("SECRET_KEY")
+app.secret_key = "medicure_secure_2026"
 
 oauth = OAuth(app)
 
