@@ -1,26 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pet Records Upload</title>
+    <title>Pet Medical Records</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
 <a href="/vet" class="back-btn">← Back</a>
 
 <div class="dashboard-container">
-    <h1>Upload Pet Medical Record</h1>
 
-    <form method="POST" enctype="multipart/form-data">
+    <!-- HEADER -->
+    <div style="text-align:center; max-width:600px; margin:auto;">
 
-        <input type="file" name="pet_file" required><br><br>
+        <h1>📁 Pet Medical Records</h1>
 
-        <button type="submit">Upload Record</button>
+        <p style="color:gray;">
+            Upload and securely store your pet’s medical history, prescriptions,
+            vaccination reports, and lab results in one place.
+        </p>
 
-    </form>
+    </div>
+
+    <!-- UPLOAD CARD -->
+    <div style="
+        max-width:500px;
+        margin:30px auto;
+        background:white;
+        padding:20px;
+        border-radius:15px;
+        box-shadow:0 5px 20px rgba(0,0,0,0.08);
+        text-align:center;
+    ">
+
+        <h3>⬆ Upload New Record</h3>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <input type="file"
+                   name="pet_file"
+                   required
+                   style="margin:15px 0;">
+
+            <br>
+
+            <button type="submit"
+                    style="
+                        width:100%;
+                        padding:12px;
+                        border:none;
+                        border-radius:10px;
+                        background:#2563eb;
+                        color:white;
+                        font-weight:bold;
+                        cursor:pointer;
+                    ">
+                Upload Securely
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- FEATURES SECTION -->
+    <div style="max-width:700px; margin:auto;">
+
+        <h3 style="text-align:center;">📌 What You Can Store</h3>
+
+        <div style="
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:15px;
+            margin-top:15px;
+        ">
+
+            <div style="background:#f1f5f9; padding:15px; border-radius:12px;">
+                🩺 Doctor Prescriptions
+            </div>
+
+            <div style="background:#f1f5f9; padding:15px; border-radius:12px;">
+                💉 Vaccination Reports
+            </div>
+
+            <div style="background:#f1f5f9; padding:15px; border-radius:12px;">
+                🧪 Lab Test Results
+            </div>
+
+            <div style="background:#f1f5f9; padding:15px; border-radius:12px;">
+                📄 Medical History
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INFO FOOTER -->
+    <div style="
+        text-align:center;
+        margin-top:40px;
+        color:gray;
+        font-size:13px;
+    ">
+        🔒 All records are stored securely for future reference
+    </div>
 
 </div>
-
 
 </body>
 </html>
