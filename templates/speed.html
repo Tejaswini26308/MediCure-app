@@ -3,41 +3,42 @@
 <head>
     <title>Fitness Tracker</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="speed-page">
 
 <a href="/dashboard" class="back-btn">← Back</a>
 
-<div class="fitness-box">
+<div class="fitness-wrapper">
 
     <h1>Fitness Tracking</h1>
 
-    <div class="shoe-animation">
-        <i class="fa-solid fa-shoe-prints"></i>
+    <div class="runner-track">
+        <div class="track-line"></div>
+        <div class="runner-icon">🏃‍♂️</div>
     </div>
 
-    <div class="fitness-stats">
-        <div class="fit-card">
-            <h2>14 km/h</h2>
+    <div class="fitness-grid">
+
+        <div class="fitness-card">
+            <h2>14 KM/H</h2>
             <p>Speed</p>
         </div>
 
-        <div class="fit-card">
+        <div class="fitness-card">
             <h2>5400</h2>
             <p>Steps</p>
         </div>
 
-        <div class="fit-card">
+        <div class="fitness-card">
             <h2>220</h2>
             <p>Calories</p>
         </div>
 
-        <div class="fit-card">
-            <h2>6.2 km</h2>
+        <div class="fitness-card">
+            <h2>5.2 KM</h2>
             <p>Distance</p>
         </div>
+
     </div>
 
 </div>
