@@ -4,165 +4,234 @@
     <title>MediCure Dashboard</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body{
+            margin:0;
+            font-family:Segoe UI;
+            background:#0b1220;
+            color:white;
+        }
+
+        /* TOP NAV */
+        .top-nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 25px;
+            background:#111827;
+            position:sticky;
+            top:0;
+        }
+
+        .top-nav h1{
+            color:#38bdf8;
+        }
+
+        .top-nav button{
+            background:#2563eb;
+            border:none;
+            padding:8px 15px;
+            border-radius:10px;
+            color:white;
+        }
+
+        /* HERO */
+        .hero{
+            padding:20px;
+            background:linear-gradient(135deg,#1d4ed8,#06b6d4);
+            margin:15px;
+            border-radius:20px;
+        }
+
+        /* QUICK CARDS */
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:15px;
+            padding:15px;
+        }
+
+        .card{
+            background:#111827;
+            padding:15px;
+            border-radius:15px;
+            text-align:center;
+            transition:0.3s;
+            cursor:pointer;
+        }
+
+        .card:hover{
+            transform:scale(1.05);
+            background:#1f2937;
+        }
+
+        .card i{
+            font-size:25px;
+            color:#38bdf8;
+        }
+
+        /* SERVICES */
+        .services{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+            gap:15px;
+            padding:15px;
+        }
+
+        /* LOCATION */
+        .location{
+            margin:15px;
+            background:#111827;
+            padding:20px;
+            border-radius:15px;
+        }
+
+        select,button{
+            padding:10px;
+            border-radius:10px;
+            margin-top:10px;
+        }
+
+        button{
+            background:#2563eb;
+            border:none;
+            color:white;
+        }
+
+        /* FLOAT CHATBOT */
+        .chatbot-btn{
+            position:fixed;
+            bottom:20px;
+            left:20px;
+            background:#2563eb;
+            padding:15px;
+            border-radius:50%;
+            cursor:pointer;
+            font-size:18px;
+        }
+
+        /* SOS */
+        .sos{
+            position:fixed;
+            bottom:20px;
+            right:20px;
+            background:red;
+            padding:15px;
+            border-radius:50%;
+            cursor:pointer;
+        }
+
+        /* RESULT BOX */
+        .result{
+            margin-top:10px;
+        }
+
+    </style>
 </head>
 
-<body class="dashboard-app">
+<body>
 
-<!-- TOP NAVBAR -->
-<nav class="top-nav">
-    <h1>🏥 MediCure</h1>
+<!-- NAV -->
+<div class="top-nav">
+    <h1>🏥 MediCure AI</h1>
+    <a href="/"><button>Home</button></a>
+</div>
 
-    <div class="nav-right">
-        <a href="/"><button>Home</button></a>
-    </div>
-</nav>
+<!-- HERO -->
+<div class="hero">
+    <h2>Smart Healthcare System</h2>
+    <p>Human + Pet AI Health Assistant Platform</p>
+</div>
 
-<!-- MAIN CONTAINER -->
-<div class="app-container">
+<!-- QUICK HEALTH -->
+<div class="grid">
 
-    <!-- HEADER -->
-    <div class="welcome-box">
-        <h2>Your Health Dashboard</h2>
-        <p>Everything you need in one place</p>
-    </div>
-
-    <!-- QUICK HEALTH CARDS -->
-    <div class="quick-grid">
-
-        <a href="/heart-rate" class="quick-card">
-            <i class="fa-solid fa-heart-pulse"></i>
-            <h3>Heart Rate</h3>
-            <p>Live monitor</p>
-        </a>
-
-        <a href="/pulse" class="quick-card">
-            <i class="fa-solid fa-stethoscope"></i>
-            <h3>Pulse Rate</h3>
-            <p>Health tracking</p>
-        </a>
-
-        <a href="/speed" class="quick-card">
-            <i class="fa-solid fa-person-running"></i>
-            <h3>Speed</h3>
-            <p>Activity tracker</p>
-        </a>
-
+    <div class="card">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <p>Heart Rate</p>
     </div>
 
-    <!-- MAIN SERVICE CARDS -->
-    <h2 class="section-title">Services</h2>
-
-    <div class="card-container">
-
-        <a href="/human">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309">
-                <h2>Human Healthcare</h2>
-                <p>Reports, symptoms, appointments</p>
-            </div>
-        </a>
-
-        <a href="/vet">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97">
-                <h2>Veterinary Care</h2>
-                <p>Pet healthcare support</p>
-            </div>
-        </a>
-
-        <a href="/admin">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef">
-                <h2>Hospital Admin</h2>
-                <p>Manage records</p>
-            </div>
-        </a>
-
-        <a href="/insurance">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85">
-                <h2>Insurance</h2>
-                <p>Claims support</p>
-            </div>
-        </a>
-
-        <a href="/pharmacy">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88">
-                <h2>Pharmacy</h2>
-                <p>Medicine guidance</p>
-            </div>
-        </a>
-
+    <div class="card">
+        <i class="fa-solid fa-stethoscope"></i>
+        <p>Pulse</p>
     </div>
 
-    <!-- HOSPITAL FINDER -->
-    <div class="location-box">
-
-        <h2>Find Nearby Hospitals</h2>
-
-        <select id="citySelect">
-            <option value="">Select City</option>
-            <option value="vijayawada">Vijayawada</option>
-            <option value="hyderabad">Hyderabad</option>
-            <option value="visakhapatnam">Visakhapatnam</option>
-        </select>
-
-        <button onclick="findHospitals()">Search</button>
-
-        <div id="hospitalResults"></div>
-
+    <div class="card">
+        <i class="fa-solid fa-person-running"></i>
+        <p>Speed</p>
     </div>
 
 </div>
 
-<!-- SOS BUTTON -->
-<div class="sos-btn" onclick="showSOS()">🚨 SOS</div>
+<!-- SERVICES -->
+<h3 style="padding-left:15px;">Services</h3>
+
+<div class="services">
+
+    <a href="/human"><div class="card">Human Care</div></a>
+    <a href="/vet"><div class="card">Pet Care</div></a>
+    <a href="/admin"><div class="card">Admin</div></a>
+    <a href="/insurance"><div class="card">Insurance</div></a>
+    <a href="/pharmacy"><div class="card">Pharmacy</div></a>
+
+</div>
+
+<!-- LOCATION -->
+<div class="location">
+
+    <h2>Find Hospitals Near You</h2>
+
+    <select id="city">
+        <option value="">Select City</option>
+        <option value="hyderabad">Hyderabad</option>
+        <option value="vijayawada">Vijayawada</option>
+    </select>
+
+    <button onclick="searchHospitals()">Search</button>
+
+    <div id="result" class="result"></div>
+
+</div>
+
+<!-- CHATBOT (HUMAN + PET AI) -->
+<div class="chatbot-btn" onclick="openChat()">
+💬
+</div>
+
+<!-- SOS -->
+<div class="sos" onclick="alert('Emergency: Call 108 Ambulance')">
+🚨
+</div>
 
 <script>
-function findHospitals() {
-    let city = document.getElementById("citySelect").value;
-    let result = document.getElementById("hospitalResults");
+function openChat(){
+    window.location.href = "/chatbot";
+}
 
-    let hospitals = {
-        vijayawada: ["Andhra Hospitals", "Ramesh Hospitals", "Sentini Hospitals"],
-        hyderabad: ["Apollo Hospitals", "Yashoda Hospitals", "Care Hospitals"],
-        visakhapatnam: ["KIMS Hospital", "Seven Hills Hospital", "Apollo Vizag"]
-    };
+function searchHospitals(){
+    let city = document.getElementById("city").value;
+    let res = document.getElementById("result");
 
-    if(city === ""){
-        result.innerHTML = "<p>Please select a city</p>";
+    if(!city){
+        res.innerHTML = "Please select city";
         return;
     }
 
-    let output = "<h3>Nearby Hospitals:</h3>";
+    res.innerHTML = "<p>Loading hospitals...</p>";
 
-    hospitals[city].forEach(h => {
-        let mapLink = `https://www.google.com/maps/search/${h}+${city}`;
-
-        output += `
-        <div class="hospital-card">
-            <h4>${h}</h4>
-            <p>24/7 Emergency Available</p>
-            <a href="${mapLink}" target="_blank">
-                <button>Open Maps</button>
-            </a>
-        </div>`;
-    });
-
-    result.innerHTML = output;
-}
-
-function showSOS(){
-    alert(
-        "🚨 Emergency Contacts:\\n\\n" +
-        "Ambulance: 108\\n" +
-        "Police: 100\\n" +
-        "Fire: 101"
-    );
+    setTimeout(()=>{
+        res.innerHTML = `
+            <div style="background:#1f2937;padding:10px;border-radius:10px;margin-top:10px;">
+                <h4>Nearby Hospitals in ${city}</h4>
+                <p>✔ Apollo</p>
+                <p>✔ Government Hospital</p>
+                <p>✔ Private Clinics</p>
+            </div>
+        `;
+    },1000);
 }
 </script>
 
