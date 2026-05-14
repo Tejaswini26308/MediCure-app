@@ -70,20 +70,81 @@
     </a>
 </div>
 
-<div class="hospital-box">
-    <h2>Nearby Hospitals</h2>
+<script>
+function findHospitals() {
+    let city = document.getElementById("citySelect").value;
+    let result = document.getElementById("hospitalResults");
 
-    <select id="citySelect">
-        <option value="">Select City</option>
-        <option value="hyderabad">Hyderabad</option>
-        <option value="vijayawada">Vijayawada</option>
-        <option value="visakhapatnam">Visakhapatnam</option>
-    </select>
+    let hospitals = {
+        vijayawada: [
+            {
+                name: "Andhra Hospital",
+                map: "https://www.google.com/maps/search/Andhra+Hospital+Vijayawada"
+            },
+            {
+                name: "Ramesh Hospital",
+                map: "https://www.google.com/maps/search/Ramesh+Hospital+Vijayawada"
+            },
+            {
+                name: "Pet Care Clinic",
+                map: "https://www.google.com/maps/search/Pet+Clinic+Vijayawada"
+            }
+        ],
 
-    <button onclick="findHospitals()">Search</button>
+        hyderabad: [
+            {
+                name: "Apollo Hospital",
+                map: "https://www.google.com/maps/search/Apollo+Hospital+Hyderabad"
+            },
+            {
+                name: "Yashoda Hospital",
+                map: "https://www.google.com/maps/search/Yashoda+Hospital+Hyderabad"
+            },
+            {
+                name: "Pet Vet Center",
+                map: "https://www.google.com/maps/search/Pet+Clinic+Hyderabad"
+            }
+        ],
 
-    <div id="hospitalResults"></div>
-</div>
+        visakhapatnam: [
+            {
+                name: "KIMS Hospital",
+                map: "https://www.google.com/maps/search/KIMS+Hospital+Vizag"
+            },
+            {
+                name: "Seven Hills Hospital",
+                map: "https://www.google.com/maps/search/Seven+Hills+Hospital+Vizag"
+            },
+            {
+                name: "Animal Care Hub",
+                map: "https://www.google.com/maps/search/Veterinary+Hospital+Vizag"
+            }
+        ]
+    };
+
+    if(city === ""){
+        result.innerHTML = "<p>Please select city first</p>";
+        return;
+    }
+
+    let output = "";
+
+    hospitals[city].forEach(h => {
+        output += `
+        <div class="hospital-card">
+            <h3>${h.name}</h3>
+            <p>24/7 Available</p>
+
+            <a href="${h.map}" target="_blank">
+                <button>Open in Google Maps</button>
+            </a>
+        </div>
+        `;
+    });
+
+    result.innerHTML = output;
+}
+</script>
 
 <div class="chat-float">
     <a href="/chatbot">
