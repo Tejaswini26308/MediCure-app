@@ -15,18 +15,15 @@
 
         <h1>🐾 Pet Symptom Checker</h1>
 
-        <!-- DESCRIPTION -->
         <p style="color:gray;">
-            This tool helps you understand possible pet health issues based on symptoms.
-            It is not a replacement for a veterinarian but gives quick guidance.
+            Enter symptoms to get instant possible health suggestions for your pet.
         </p>
 
         <!-- FORM -->
-        <form method="POST" onsubmit="showLoading(event)">
+        <form id="symptomForm">
 
             <input type="text"
                    id="symptomInput"
-                   name="symptom"
                    placeholder="Enter pet symptoms (e.g., vomiting, fever)"
                    required
                    style="width:90%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #ccc;">
@@ -38,7 +35,7 @@
 
         </form>
 
-        <!-- LOADING CIRCLE -->
+        <!-- LOADING -->
         <div id="loading" style="display:none; margin-top:20px;">
             <div style="
                 width:50px;
@@ -49,7 +46,17 @@
                 margin:auto;
                 animation: spin 1s linear infinite;">
             </div>
-            <p>Checking symptoms...</p>
+            <p>Analyzing symptoms...</p>
+        </div>
+
+        <!-- RESULT BOX -->
+        <div id="resultBox" style="
+            display:none;
+            margin-top:20px;
+            padding:15px;
+            border-radius:12px;
+            background:#f1f5f9;
+            text-align:left;">
         </div>
 
     </div>
@@ -64,16 +71,41 @@
 </style>
 
 <script>
-function showLoading(event){
-    event.preventDefault();
+document.getElementById("symptomForm").addEventListener("submit", function(e){
+    e.preventDefault();
 
-    document.querySelector("form").style.display = "none";
+    let symptom = document.getElementById("symptomInput").value.toLowerCase();
+
     document.getElementById("loading").style.display = "block";
+    document.getElementById("resultBox").style.display = "none";
 
     setTimeout(() => {
-        document.querySelector("form").submit();
+
+        document.getElementById("loading").style.display = "none";
+
+        let result = "";
+
+        if(symptom.includes("vomiting")){
+            result = "🐶 Possible issue: Digestive problem. Give light food and water.";
+        }
+        else if(symptom.includes("fever")){
+            result = "🐶 Possible issue: Infection or viral fever. Monitor temperature.";
+        }
+        else if(symptom.includes("skin")){
+            result = "🐶 Possible issue: Skin allergy or infection.";
+        }
+        else if(symptom.includes("cough")){
+            result = "🐶 Possible issue: Respiratory infection.";
+        }
+        else{
+            result = "🐶 Advice: Please consult a veterinarian for proper diagnosis.";
+        }
+
+        document.getElementById("resultBox").style.display = "block";
+        document.getElementById("resultBox").innerHTML = "<h3>Result:</h3><p>" + result + "</p>";
+
     }, 1500);
-}
+});
 </script>
 
 </body>
