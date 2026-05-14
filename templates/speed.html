@@ -1,90 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Speed Tracker</title>
+    <title>Fitness Tracker</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="tracker-page">
 
-<a href="/dashboard" class="back-btn">⬅ Back</a>
+<body class="speed-page">
 
-<div class="watch-container">
-    <h1>🏃 Speed Tracker</h1>
+<a href="/dashboard" class="back-btn">← Back</a>
 
-    <div class="circle-box">
-        <h2>12</h2>
-        <p>KM/H</p>
+<div class="speed-container">
+
+    <h1>Fitness Performance</h1>
+
+    <div class="runner-track">
+        <div class="runner">🏃</div>
     </div>
 
-    <marquee>🏃 Running... Calories Burned: 220 🔥 Steps: 5400</marquee>
-</div>
-<div class="run-dashboard">
-
-    <div class="run-header">
-        <h2>🏃 Pro Fitness Tracker</h2>
-        <p>Live Motion + Performance Analytics</p>
-    </div>
-
-    <!-- RUN TRACK -->
-    <div class="run-track">
-        <div class="track-glow"></div>
-        <div class="runner">🏃‍♂️</div>
-    </div>
-
-    <!-- STATS -->
-    <div class="run-stats">
-
-        <div class="stat">
-            <h3><span class="count" data-target="14">0</span> km/h</h3>
+    <div class="speed-stats">
+        <div class="speed-card">
+            <h2>14 KM/H</h2>
             <p>Speed</p>
         </div>
 
-        <div class="stat">
-            <h3><span class="count" data-target="32">0</span> min</h3>
-            <p>Time</p>
-        </div>
-
-        <div class="stat">
-            <h3><span class="count" data-target="5.6">0</span> km</h3>
-            <p>Distance</p>
-        </div>
-
-        <div class="stat">
-            <h3><span class="count" data-target="6420">0</span></h3>
+        <div class="speed-card">
+            <h2>5400</h2>
             <p>Steps</p>
         </div>
 
-    </div>
-
-    <!-- PULSE GRAPH -->
-    <div class="pulse-graph">
-        <div></div><div></div><div></div><div></div><div></div>
-        <div></div><div></div><div></div><div></div><div></div>
+        <div class="speed-card">
+            <h2>220</h2>
+            <p>Calories</p>
+        </div>
     </div>
 
 </div>
-<script>
-function animateCounters(){
-    let counters = document.querySelectorAll(".count");
 
-    counters.forEach(counter => {
-        let target = +counter.getAttribute("data-target");
-        let current = 0;
-
-        let step = target / 100;
-
-        let update = setInterval(() => {
-            current += step;
-
-            if(current >= target){
-                current = target;
-                clearInterval(update);
-            }
-
-            counter.innerText = Math.floor(current);
-        }, 20);
-    });
-}
-
-window.onload = animateCounters;
-</script>
+</body>
+</html>

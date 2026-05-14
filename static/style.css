@@ -903,3 +903,248 @@ footer{
     0%{transform:scaleY(0.7); opacity:0.6;}
     100%{transform:scaleY(1.1); opacity:1;}
 }
+/* DASHBOARD PREMIUM */
+
+.dashboard-page{
+    background:#f4f8ff;
+}
+
+.premium-nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 40px;
+    background:white;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+
+.nav-icons i{
+    font-size:22px;
+    margin-left:20px;
+    color:#2563eb;
+}
+
+.premium-hero{
+    width:90%;
+    margin:30px auto;
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+    color:white;
+    padding:40px;
+    border-radius:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.hero-icon i{
+    font-size:70px;
+}
+
+.section-title{
+    text-align:center;
+    margin:30px 0;
+}
+
+.premium-grid,.service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    width:90%;
+    margin:auto;
+}
+
+.premium-card{
+    padding:30px;
+    border-radius:20px;
+    color:white;
+    text-align:center;
+}
+
+.red{background:#ef4444;}
+.blue{background:#3b82f6;}
+.green{background:#10b981;}
+
+.premium-card i{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.service-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.service-card i{
+    font-size:35px;
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.hospital-box{
+    width:90%;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+}
+
+.hospital-card{
+    background:#111827;
+    color:white;
+    padding:15px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.sos-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:60px;
+    height:60px;
+    background:red;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* HEART PAGE */
+
+.heart-page{
+    background:#0f172a;
+    color:white;
+}
+
+.heart-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    min-height:100vh;
+}
+
+.heart-img{
+    width:320px;
+    animation:heartbeat 1s infinite;
+}
+
+.live-bpm{
+    font-size:60px;
+    color:#ef4444;
+}
+
+.ecg-line{
+    width:400px;
+    height:100px;
+    background:#111827;
+    margin:20px auto;
+    overflow:hidden;
+}
+
+.line{
+    width:200%;
+    height:100%;
+    background:url('https://i.imgur.com/9Qx6K8v.png');
+    background-size:contain;
+    animation:moveLine 3s linear infinite;
+}
+
+@keyframes moveLine{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+}
+
+/* PULSE */
+
+.pulse-page{
+    background:#0f172a;
+    color:white;
+}
+
+.pulse-container{
+    text-align:center;
+    padding-top:100px;
+}
+
+.pulse-circle{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:linear-gradient(#2563eb,#06b6d4);
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.pulse-bars{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:40px;
+}
+
+.pulse-bars div{
+    width:20px;
+    height:100px;
+    background:#06b6d4;
+    animation:pulseBars 1s infinite alternate;
+}
+
+@keyframes pulseBars{
+    from{height:50px;}
+    to{height:140px;}
+}
+
+/* SPEED */
+
+.speed-page{
+    background:#111827;
+    color:white;
+}
+
+.speed-container{
+    text-align:center;
+    padding:60px;
+}
+
+.runner-track{
+    height:100px;
+    background:#1f2937;
+    border-radius:20px;
+    margin:30px auto;
+    width:80%;
+    position:relative;
+}
+
+.runner{
+    position:absolute;
+    font-size:45px;
+    top:20px;
+    animation:run 4s linear infinite;
+}
+
+@keyframes run{
+    from{left:0;}
+    to{left:90%;}
+}
+
+.speed-stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    width:80%;
+    margin:auto;
+}
+
+.speed-card{
+    background:#2563eb;
+    padding:25px;
+    border-radius:20px;
+}

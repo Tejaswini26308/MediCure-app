@@ -2,218 +2,133 @@
 <html>
 <head>
     <title>MediCure Dashboard</title>
-
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body class="dashboard-app">
+<body class="dashboard-page">
 
-<!-- TOP NAV -->
-<nav class="top-nav">
-    <h1>🏥 MediCure AI</h1>
+<!-- NAVBAR -->
+<div class="premium-nav">
+    <h2>🏥 MediCure</h2>
 
-    <div class="nav-right">
-        <a href="/"><button>Home</button></a>
+    <div class="nav-icons">
+        <a href="/chatbot"><i class="fa-solid fa-robot"></i></a>
+        <a href="/"><i class="fa-solid fa-house"></i></a>
     </div>
-</nav>
-
-<div class="app-container">
-
-    <!-- HERO -->
-    <div class="welcome-box">
-        <h2>Smart Healthcare Platform</h2>
-        <p>Human + Pet Care + AI Support + Emergency System</p>
-    </div>
-
-    <!-- HEALTH TRACKING -->
-    <h2 class="section-title">Health Tracking</h2>
-
-    <div class="quick-grid">
-
-        <a href="/heart-rate" class="quick-card">
-            <i class="fa-solid fa-heart-pulse"></i>
-            <h3>Heart Rate</h3>
-        </a>
-
-        <a href="/pulse" class="quick-card">
-            <i class="fa-solid fa-stethoscope"></i>
-            <h3>Pulse</h3>
-        </a>
-
-        <a href="/speed" class="quick-card">
-            <i class="fa-solid fa-person-running"></i>
-            <h3>Speed</h3>
-        </a>
-
-    </div>
-
-    <!-- SERVICES -->
-    <h2 class="section-title">Services</h2>
-
-    <div class="card-container">
-
-        <a href="/human">
-            <div class="card">
-                <i class="fa-solid fa-user-doctor"></i>
-                <h2>Human Care</h2>
-                <p>Appointments • Reports</p>
-            </div>
-        </a>
-
-        <a href="/vet">
-            <div class="card">
-                <i class="fa-solid fa-paw"></i>
-                <h2>Veterinary Care</h2>
-                <p>Pet health system</p>
-            </div>
-        </a>
-
-        <a href="/admin">
-            <div class="card">
-                <i class="fa-solid fa-hospital"></i>
-                <h2>Admin Panel</h2>
-                <p>Hospital management</p>
-            </div>
-        </a>
-
-        <a href="/insurance">
-            <div class="card">
-                <i class="fa-solid fa-shield-heart"></i>
-                <h2>Insurance</h2>
-                <p>Claims & policies</p>
-            </div>
-        </a>
-
-        <a href="/pharmacy">
-            <div class="card">
-                <i class="fa-solid fa-pills"></i>
-                <h2>Pharmacy</h2>
-                <p>Medicine info</p>
-            </div>
-        </a>
-
-    </div>
-
-    <!-- HOSPITAL FINDER -->
-    <div class="location-box">
-
-        <h2>Find Nearby Hospitals (Human + Pet)</h2>
-
-        <select id="citySelect">
-            <option value="">Select City</option>
-            <option value="vijayawada">Vijayawada</option>
-            <option value="hyderabad">Hyderabad</option>
-            <option value="visakhapatnam">Visakhapatnam</option>
-        </select>
-
-        <button onclick="findHospitals()">Search Hospitals</button>
-
-        <div id="hospitalResults"></div>
-
-    </div>
-
 </div>
 
-<!-- 🤖 AI CHATBOT FLOAT (LEFT) -->
-<div style="
-    position:fixed;
-    bottom:20px;
-    left:20px;
-    width:60px;
-    height:60px;
-    background:#2563eb;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    box-shadow:0 6px 15px rgba(0,0,0,0.3);
-    z-index:999;
-">
-    <a href="/chatbot" style="color:white;font-size:22px;">
-        <i class="fa-solid fa-robot"></i>
+<!-- HERO -->
+<div class="premium-hero">
+    <div>
+        <h1>Your Health, One Smart App</h1>
+        <p>Book appointments • Find hospitals • Track health • Pet care</p>
+    </div>
+
+    <div class="hero-icon">
+        <i class="fa-solid fa-heart-pulse"></i>
+    </div>
+</div>
+
+<!-- QUICK ACTIONS -->
+<h2 class="section-title">Health Tracking</h2>
+
+<div class="premium-grid">
+
+    <a href="/heart-rate" class="premium-card red">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <h3>Heart Monitor</h3>
     </a>
+
+    <a href="/pulse" class="premium-card blue">
+        <i class="fa-solid fa-wave-square"></i>
+        <h3>Pulse Monitor</h3>
+    </a>
+
+    <a href="/speed" class="premium-card green">
+        <i class="fa-solid fa-person-running"></i>
+        <h3>Fitness Speed</h3>
+    </a>
+
 </div>
 
-<!-- 🚨 SOS FLOAT (RIGHT) -->
-<div onclick="showSOS()" style="
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:60px;
-    height:60px;
-    background:red;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    font-size:20px;
-    box-shadow:0 6px 15px rgba(0,0,0,0.3);
-    cursor:pointer;
-    z-index:999;
-">
-    🚨
+<!-- SERVICES -->
+<h2 class="section-title">Medical Services</h2>
+
+<div class="service-grid">
+
+    <a href="/human" class="service-card">
+        <i class="fa-solid fa-user-doctor"></i>
+        <p>Human Care</p>
+    </a>
+
+    <a href="/vet" class="service-card">
+        <i class="fa-solid fa-paw"></i>
+        <p>Pet Care</p>
+    </a>
+
+    <a href="/insurance" class="service-card">
+        <i class="fa-solid fa-shield-heart"></i>
+        <p>Insurance</p>
+    </a>
+
+    <a href="/pharmacy" class="service-card">
+        <i class="fa-solid fa-pills"></i>
+        <p>Pharmacy</p>
+    </a>
+
 </div>
+
+<!-- HOSPITAL FINDER -->
+<div class="hospital-box">
+    <h2>Find Nearby Hospitals</h2>
+
+    <select id="citySelect">
+        <option value="">Select City</option>
+        <option value="vijayawada">Vijayawada</option>
+        <option value="hyderabad">Hyderabad</option>
+        <option value="visakhapatnam">Visakhapatnam</option>
+    </select>
+
+    <button onclick="findHospitals()">Search</button>
+
+    <div id="hospitalResults"></div>
+</div>
+
+<!-- SOS -->
+<div class="sos-float" onclick="showSOS()">🚨</div>
 
 <script>
-function findHospitals() {
+function showSOS(){
+    alert("Ambulance: 108\nPolice:100\nFire:101");
+}
 
+function findHospitals() {
     let city = document.getElementById("citySelect").value;
     let result = document.getElementById("hospitalResults");
 
     let hospitals = {
-        vijayawada: [
-            "Andhra Hospitals",
-            "Ramesh Hospitals",
-            "Pet Care Clinic Vijayawada"
-        ],
-        hyderabad: [
-            "Apollo Hospitals",
-            "Yashoda Hospitals",
-            "BlueCross Pet Hospital"
-        ],
-        visakhapatnam: [
-            "KIMS Hospital",
-            "Seven Hills Hospital",
-            "Vizag Pet Clinic"
-        ]
+        vijayawada:["Andhra Hospital","Ramesh Hospital"],
+        hyderabad:["Apollo Hospital","Yashoda Hospital"],
+        visakhapatnam:["KIMS Hospital","Seven Hills Hospital"]
     };
 
-    if(city === ""){
-        result.innerHTML = "<p>Please select a city</p>";
+    if(city===""){
+        result.innerHTML="<p>Select city first</p>";
         return;
     }
 
-    let output = "<h3>Nearby Human + Pet Hospitals</h3>";
-
-    hospitals[city].forEach(h => {
-
-        let mapLink = `https://www.google.com/maps/search/${h}+${city}`;
-
+    let output="";
+    hospitals[city].forEach(h=>{
         output += `
-        <div style="
-            background:#111827;
-            color:white;
-            padding:15px;
-            margin:10px 0;
-            border-radius:15px;
-        ">
+        <div class="hospital-card">
             <h4>${h}</h4>
-            <p>24/7 Emergency Support</p>
-            <a href="${mapLink}" target="_blank">
-                <button style="margin-top:10px;">Open in Maps</button>
-            </a>
+            <p>24/7 Available</p>
         </div>`;
     });
 
-    result.innerHTML = output;
-}
-
-function showSOS(){
-    alert("🚨 Emergency:\nAmbulance: 108\nPolice: 100\nFire: 101");
+    result.innerHTML=output;
 }
 </script>
 
