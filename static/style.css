@@ -1703,10 +1703,10 @@ footer{
 
 @keyframes runMove{
     from{
-        left:0;
+        left:85%;
     }
     to{
-        left:85%;
+        left:0;
     }
 }
 
