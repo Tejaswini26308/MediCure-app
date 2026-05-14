@@ -11,25 +11,26 @@
 
 <body class="dashboard-app">
 
-<!-- TOP NAVBAR -->
+<!-- TOP NAV -->
 <nav class="top-nav">
-    <h1>🏥 MediCure</h1>
+    <h1>🏥 MediCure AI</h1>
 
     <div class="nav-right">
         <a href="/"><button>Home</button></a>
     </div>
 </nav>
 
-<!-- MAIN CONTAINER -->
 <div class="app-container">
 
     <!-- HERO -->
     <div class="welcome-box">
-        <h2>Welcome to MediCure AI</h2>
-        <p>Human + Pet Healthcare in one smart platform</p>
+        <h2>Smart Healthcare Platform</h2>
+        <p>Human + Pet Care + AI Support + Emergency System</p>
     </div>
 
-    <!-- QUICK FEATURES (premium cards) -->
+    <!-- HEALTH TRACKERS -->
+    <h2 class="section-title">Health Tracking</h2>
+
     <div class="quick-grid">
 
         <a href="/heart-rate" class="quick-card">
@@ -49,57 +50,47 @@
 
     </div>
 
-    <!-- MAIN SERVICES (Paytm style cards) -->
+    <!-- MAIN SERVICES -->
     <h2 class="section-title">Services</h2>
 
     <div class="card-container">
 
-        <a href="/human">
-            <div class="card">
-                <i class="fa-solid fa-user-doctor"></i>
-                <h2>Human Care</h2>
-                <p>Appointments • Reports • Symptoms</p>
-            </div>
-        </a>
+        <a href="/human"><div class="card">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h2>Human Care</h2>
+            <p>Appointments • Reports</p>
+        </div></a>
 
-        <a href="/vet">
-            <div class="card">
-                <i class="fa-solid fa-paw"></i>
-                <h2>Pet Care</h2>
-                <p>Vet • Vaccination • Records</p>
-            </div>
-        </a>
+        <a href="/vet"><div class="card">
+            <i class="fa-solid fa-paw"></i>
+            <h2>Veterinary Care</h2>
+            <p>Pet health system</p>
+        </div></a>
 
-        <a href="/admin">
-            <div class="card">
-                <i class="fa-solid fa-hospital"></i>
-                <h2>Admin</h2>
-                <p>Manage system data</p>
-            </div>
-        </a>
+        <a href="/admin"><div class="card">
+            <i class="fa-solid fa-hospital"></i>
+            <h2>Admin Panel</h2>
+            <p>Hospital management</p>
+        </div></a>
 
-        <a href="/insurance">
-            <div class="card">
-                <i class="fa-solid fa-shield-heart"></i>
-                <h2>Insurance</h2>
-                <p>Claims & support</p>
-            </div>
-        </a>
+        <a href="/insurance"><div class="card">
+            <i class="fa-solid fa-shield-heart"></i>
+            <h2>Insurance</h2>
+            <p>Claims & policies</p>
+        </div></a>
 
-        <a href="/pharmacy">
-            <div class="card">
-                <i class="fa-solid fa-pills"></i>
-                <h2>Pharmacy</h2>
-                <p>Medicine info</p>
-            </div>
-        </a>
+        <a href="/pharmacy"><div class="card">
+            <i class="fa-solid fa-pills"></i>
+            <h2>Pharmacy</h2>
+            <p>Medicine info</p>
+        </div></a>
 
     </div>
 
-    <!-- LOCATION BOX -->
+    <!-- 🔥 COMBINED HOSPITAL FINDER -->
     <div class="location-box">
 
-        <h2>Find Nearby Hospitals</h2>
+        <h2>Find Nearby Hospitals (Human + Pet)</h2>
 
         <select id="citySelect">
             <option value="">Select City</option>
@@ -108,7 +99,7 @@
             <option value="visakhapatnam">Visakhapatnam</option>
         </select>
 
-        <button onclick="findHospitals()">Search</button>
+        <button onclick="findHospitals()">Search Hospitals</button>
 
         <div id="hospitalResults"></div>
 
@@ -116,25 +107,72 @@
 
 </div>
 
-<!-- ⭐ FLOATING AI CHATBOT (NEW PREMIUM FEATURE) -->
-<div class="chatbot-fab">
-    <a href="/chatbot">
+<!-- 🤖 CHATBOT FLOAT (BOTTOM LEFT) -->
+<div class="chatbot-fab" style="
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    background:#2563eb;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    z-index:999;
+">
+    <a href="/chatbot" style="color:white;font-size:22px;">
         <i class="fa-solid fa-robot"></i>
     </a>
 </div>
 
-<!-- SOS BUTTON -->
-<div class="sos-btn" onclick="showSOS()">🚨 SOS</div>
+<!-- 🚨 SOS FLOAT (BOTTOM RIGHT) -->
+<div onclick="showSOS()" style="
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:red;
+    color:white;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    cursor:pointer;
+    z-index:999;
+">
+    🚨
+</div>
 
 <script>
 function findHospitals() {
+
     let city = document.getElementById("citySelect").value;
     let result = document.getElementById("hospitalResults");
 
     let hospitals = {
-        vijayawada: ["Andhra Hospitals", "Ramesh Hospitals", "Sentini Hospitals"],
-        hyderabad: ["Apollo Hospitals", "Yashoda Hospitals", "Care Hospitals"],
-        visakhapatnam: ["KIMS Hospital", "Seven Hills Hospital", "Apollo Vizag"]
+        vijayawada: [
+            "Andhra Hospitals",
+            "Ramesh Hospitals",
+            "Sentini Hospitals",
+            "Pet Care Clinic Vijayawada"
+        ],
+        hyderabad: [
+            "Apollo Hospitals",
+            "Yashoda Hospitals",
+            "Care Hospitals",
+            "BlueCross Pet Hospital"
+        ],
+        visakhapatnam: [
+            "KIMS Hospital",
+            "Seven Hills Hospital",
+            "Apollo Vizag",
+            "Vizag Pet Clinic"
+        ]
     };
 
     if(city === ""){
@@ -142,17 +180,24 @@ function findHospitals() {
         return;
     }
 
-    let output = "<h3>Nearby Hospitals:</h3>";
+    let output = "<h3>Nearby Human + Pet Hospitals</h3>";
 
     hospitals[city].forEach(h => {
+
         let mapLink = `https://www.google.com/maps/search/${h}+${city}`;
 
         output += `
-        <div class="hospital-card">
+        <div class="hospital-card" style="
+            background:#111827;
+            color:white;
+            padding:15px;
+            margin:10px 0;
+            border-radius:15px;
+        ">
             <h4>${h}</h4>
-            <p>24/7 Emergency Available</p>
+            <p>24/7 Emergency Support</p>
             <a href="${mapLink}" target="_blank">
-                <button>Open Maps</button>
+                <button style="margin-top:10px;">Open in Maps</button>
             </a>
         </div>`;
     });
@@ -161,7 +206,7 @@ function findHospitals() {
 }
 
 function showSOS(){
-    alert("🚨 Emergency: 108 Ambulance / 100 Police / 101 Fire");
+    alert("🚨 Emergency Numbers:\n108 Ambulance\n100 Police\n101 Fire");
 }
 </script>
 
