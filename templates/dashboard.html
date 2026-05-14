@@ -70,7 +70,36 @@
     </a>
 </div>
 
+<div class="hospital-box">
+    <h2>Nearby Hospitals</h2>
+
+    <select id="citySelect">
+        <option value="">Select City</option>
+        <option value="hyderabad">Hyderabad</option>
+        <option value="vijayawada">Vijayawada</option>
+        <option value="visakhapatnam">Visakhapatnam</option>
+    </select>
+
+    <button onclick="findHospitals()">Search</button>
+
+    <div id="hospitalResults"></div>
+</div>
+
+<div class="chat-float">
+    <a href="/chatbot">
+        <i class="fa-solid fa-comments"></i>
+    </a>
+</div>
+
+<div class="sos-float" onclick="showSOS()">SOS</div>
+
 <script>
+function showSOS(){
+    alert("Emergency Numbers:\nAmbulance:108\nPolice:100");
+}
+
+<script>
+    
 function findHospitals() {
     let city = document.getElementById("citySelect").value;
     let result = document.getElementById("hospitalResults");
@@ -143,48 +172,6 @@ function findHospitals() {
     });
 
     result.innerHTML = output;
-}
-</script>
-
-<div class="chat-float">
-    <a href="/chatbot">
-        <i class="fa-solid fa-comments"></i>
-    </a>
-</div>
-
-<div class="sos-float" onclick="showSOS()">SOS</div>
-
-<script>
-function showSOS(){
-    alert("Emergency Numbers:\nAmbulance:108\nPolice:100");
-}
-
-function findHospitals(){
-    let city=document.getElementById("citySelect").value;
-    let result=document.getElementById("hospitalResults");
-
-    let hospitals={
-        hyderabad:["Apollo Hospital","Yashoda Hospital"],
-        vijayawada:["Ramesh Hospital","Andhra Hospital"],
-        visakhapatnam:["KIMS Hospital","Seven Hills"]
-    };
-
-    if(city===""){
-        result.innerHTML="Select city first";
-        return;
-    }
-
-    let output="";
-
-    hospitals[city].forEach(h=>{
-        output+=`
-        <div class="hospital-card">
-            <h4>${h}</h4>
-            <p>24/7 Available</p>
-        </div>`;
-    });
-
-    result.innerHTML=output;
 }
 </script>
 
